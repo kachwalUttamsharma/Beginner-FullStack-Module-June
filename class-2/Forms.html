@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Form - wrapper-->
+    <!-- label and input element (text, textarea, calendar, 
+        radio, checkbox)-->
+    <!-- label -  UserName -->
+    <!-- input - type - text-->
+    <!-- For in label and id in input element should be same-->
+    <!--
+        {
+            name: uttam
+        }
+    -->
+    <!-- br - breakline -->
+    <form>
+      <!-- Text Element-->
+      <label for="username">Name:</label>
+      <input type="text" id="username" name="name" required />
+      <br />
+      <br />
+      <!-- Radio Button-->
+      <!-- id should be unique in html document -->
+      <!-- for="sex" nned to point to 2 elements of input type -->
+      <label for="sex">Sex:</label>
+      <input type="radio" name="sex" id="male" value="male" />
+      <label for="male">Male</label>
+      <input type="radio" name="sex" id="female" value="female" />
+      <label for="female">Female</label>
+      <br />
+      <br />
+      <!-- dropdown -->
+      <!--{
+        country: India
+      } -->
+      <label for="country">Country</label>
+      <select id="country" name="country" required>
+        <option value="India">India</option>
+        <option value="USA">USA</option>
+        <option value="England">England</option>
+        <option value="South Africa">South Africa</option>
+      </select>
+      <br />
+      <br />
+
+      <label for="dateOfBirth">Date of Birth</label>
+      <input type="date" id="dateOfBirth" />
+      <br />
+      <br />
+      <!-- Text Area -->
+      <label for="message">Message</label>
+      <!-- <input type="textarea" id="message"/> -->
+      <textarea id="message" rows="2" cols="24" required></textarea>
+      <br />
+      <br />
+      <!-- checkbox-->
+      <input type="checkbox" id="subscribe" />
+      <label for="subscribe">Subscribe to newsletter ?</label>
+      <br />
+      <br />
+
+      <input type="button" value="submit" />
+    </form>
+  </body>
+</html>

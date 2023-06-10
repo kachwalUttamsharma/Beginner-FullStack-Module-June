@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table</title>
+  </head>
+  <body>
+    <!-- table - wrapper tag-->
+    <!-- tr - table row -->
+    <!-- th - table heading -->
+    <!-- td - table data -->
+    <!-- Caption - table heading -->
+    <!-- table - (semantic UI )thead, tbody, tfoot-->
+    <!-- thead wrapper around header-->
+    <!-- tbody wrapper around data-->
+    <!-- tfoot wrapper around footer-->
+    <!-- colspan - value which defines amount column 
+        it need to cover or spread across-->
+    <!-- rowspan - value which defines amount row 
+        it need to cover or spread across-->
+    <!-- MarkSheet -->
+
+    <table border="1" style="border-collapse: collapse">
+      <caption>
+        Tracking of Subject to PSP
+      </caption>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Subject</th>
+          <th>PSP</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Uttam</td>
+          <td>DSA</td>
+          <td>60%</td>
+        </tr>
+        <tr>
+          <td rowspan="2">Prateek</td>
+          <td>DSA</td>
+          <td>85%</td>
+        </tr>
+        <tr>
+          <td>Front-end Task</td>
+          <td>100%</td>
+        </tr>
+        <tr>
+          <td rowspan="2">Sindhu</td>
+          <td>DSA</td>
+          <td>80%</td>
+        </tr>
+        <tr>
+          <td>Front-end Task</td>
+          <td>100%</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2">Total Average PSP</td>
+          <td>85%</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>
