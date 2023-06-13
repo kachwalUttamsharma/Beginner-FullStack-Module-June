@@ -38,3 +38,4 @@ Scaler Full Stack Module Beginner Curriculum
         -> hsla() function
     4. Background Properties
     5. Text Related Properties (font-family, font-style...)
+    Reference Commit: 3da6f4c
