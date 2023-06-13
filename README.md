@@ -19,3 +19,22 @@ Scaler Full Stack Module Beginner Curriculum
     4. Forms
     5. Continuation of Portfolio project adding form into it
     Reference Commit - 34cba63
+
+## Class -3
+
+    1. Css Introduction
+    2. Different Types Selectors
+        -> Element Selector
+        -> Class Selector
+        -> Id Selector
+        -> Attribute Selector
+        -> Descendant Selector
+        -> Children Selector
+        -> Combinatrics
+    3. CSS Colors
+        -> Default Colors
+        -> Hex Codes
+        -> rbga function
+        -> hsla() function
+    4. Background Properties
+    5. Text Related Properties (font-family, font-style...)
