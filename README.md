@@ -18,9 +18,8 @@ Scaler Full Stack Module Beginner Curriculum
     3. Tables
     4. Forms
     5. Continuation of Portfolio project adding form into it
-    Reference Commit - 34cba63
 
-## Class -3
+## Class - 3
 
     1. Css Introduction
     2. Different Types Selectors
@@ -38,4 +37,24 @@ Scaler Full Stack Module Beginner Curriculum
         -> hsla() function
     4. Background Properties
     5. Text Related Properties (font-family, font-style...)
-    Reference Commit: 3da6f4c
+
+## Class - 4
+
+    1. Display
+        -> inline
+        -> block
+        -> inline-block
+        -> none
+    2. box model
+        -> content-area
+        -> padding
+        -> border
+        -> margin
+    3. box-sizing
+    4. overflow
+    5. position
+        -> static
+        -> absolute
+        -> relative
+        -> fixed
+        -> sticky

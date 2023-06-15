@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Height/Width -> Default case (content box)-> ( width + height ) + padding + border  -->
+    <!-- Border-box -> width (100px ) - padding - border - margin -> width of content-->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        border: 3px solid dodgerblue;
+        margin: 5px;
+        padding: 10px;
+      }
+
+      h1 {
+        color: rgb(196, 137, 116);
+        border: 3px solid rgb(170, 112, 134);
+        border-radius: 10px;
+        text-align: center;
+        margin-bottom: 20px;
+        height: 100px;
+        padding: 5px;
+      }
+      p {
+        margin-top: 40px;
+        color: tomato;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>This is Heading 1</h1>
+
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum
+        deserunt quisquam repellat aliquam est delectus? Animi laboriosam dicta
+        enim recusandae, nostrum dignissimos facilis nemo, soluta illum
+        doloremque quod! Maxime quae hic dolorum enim labore officia dignissimos
+        quia rem doloribus odit.
+      </p>
+    </div>
+
+    <div class="container">
+      <h1>This is Heading 2</h1>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed saepe
+        molestias, quos officia maxime fugit beatae quisquam necessitatibus
+        voluptatem atque illo repellendus consectetur accusamus sequi modi nihil
+        amet perferendis ea enim et rem laborum ullam doloremque eius! Soluta,
+        ex quidem.
+      </p>
+    </div>
+
+    <div class="container">
+      <h1>This is Heading 3</h1>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed saepe
+        molestias, quos officia maxime fugit beatae quisquam necessitatibus
+        voluptatem atque illo repellendus consectetur accusamus sequi modi nihil
+        amet perferendis ea enim et rem laborum ullam doloremque eius! Soluta,
+        ex quidem.
+      </p>
+    </div>
+  </body>
+</html>
