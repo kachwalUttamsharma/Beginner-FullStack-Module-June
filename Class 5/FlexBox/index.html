@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- 
+        container: how elements are adjusted on row and column
+        items: what order, how they will grow, how they will shrink
+        with increase or decrease of size of screen 
+    -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlexBox</title>
+    <!-- FlexBox -> Flexible box which is used to build
+    Flexible layout -->
+    <style>
+      .flex-container {
+        background-color: tomato;
+        border: 2px solid black;
+        height: 400px;
+        width: auto;
+        display: flex;
+
+        /* it defines flex-item direction
+        which is directly proportional 
+        to main-axis */
+        flex-direction: row;
+
+        /*this property is applied to main-axis
+        to move elements */
+        justify-content: center;
+
+        /*this property is applied to cross-axis
+        to move elements */
+        align-items: center;
+
+        /* it helps to wrap elements as
+        per width available 
+        (reference screen width)*/
+        /* flex-wrap: wrap; */
+
+        /*flex-flow: flex-direction flex-wrap */
+        /* flex-flow: row wrap; */
+
+        /* it works same as align -item but if container
+        hieght is very large in that case it helps to put 
+        elements at respective position using this 
+        property*/
+        /* align-content: flex-end; */
+      }
+
+      .flex-item {
+        height: 100px;
+        width: 200px;
+        margin: 30px;
+        background-color: dodgerblue;
+      }
+      /* order is helpful in order re-arrange the order in 
+      which elements are rendered*/
+      /* flex grow is used when we want items to grow with ratio
+      when width of screen increases*/
+      /* flex shrink is used when we want items to shrink
+      when width of screen decreases*/
+      .item1 {
+        /* order: 3; */
+        /* flex-grow: 3; */
+        /* flex-shrink: 3; */
+        flex-basis: 100px;
+      }
+
+      .item2 {
+        /* order: 1; */
+        /* flex-grow: 2; */
+        /* flex-shrink: 2; */
+      }
+
+      .item3 {
+        /* order: 6; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="flex-item item1">1</div>
+      <div class="flex-item item2">2</div>
+      <div class="flex-item item3">3</div>
+      <!-- <div class="flex-item item4">4</div>
+      <div class="flex-item item5">5</div>
+      <div class="flex-item item6">6</div> -->
+    </div>
+  </body>
+</html>

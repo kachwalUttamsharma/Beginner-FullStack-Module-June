@@ -58,3 +58,21 @@ Scaler Full Stack Module Beginner Curriculum
         -> relative
         -> fixed
         -> sticky
+
+## Class - 5
+
+    1. FlexBox
+        -> container related properties
+            > justify content
+            > align items
+            > align content
+            > flex wrap
+        -> items related properties
+            > order
+            > grow
+            > shrink
+            > basis
+    2. Media query
+    3. FlexBox Example
+            > navigation bar
+            > cards
