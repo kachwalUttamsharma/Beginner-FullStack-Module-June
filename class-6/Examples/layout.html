@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        display: grid;
+        grid-template-areas:
+          "head head head"
+          "n content ads"
+          "n footer footer";
+        grid-template-columns: 20% 1fr 70px;
+        grid-template-rows: 80px 1fr 15%;
+        gap: 10px;
+        height: 100vh;
+      }
+
+      header,
+      footer,
+      nav,
+      aside,
+      article {
+        padding: 8px;
+        background-color: tomato;
+      }
+
+      #pageHeader {
+        grid-area: head;
+      }
+
+      #mainArticle {
+        grid-area: content;
+      }
+
+      #mainNav {
+        grid-area: n;
+      }
+
+      #siteAds {
+        grid-area: ads;
+      }
+
+      #pageFooter {
+        grid-area: footer;
+      }
+
+      @media all and (max-width: 575px) {
+        body {
+          grid-template-areas:
+            "head"
+            "content"
+            "ads"
+            "n"
+            "footer";
+          grid-template-columns: 1fr;
+          grid-template-rows: 80px 1fr 70px 1fr 70px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header id="pageHeader">Header</header>
+    <article id="mainArticle">Content Area</article>
+    <nav id="mainNav">Nav</nav>
+    <aside id="siteAds">Ads</aside>
+    <footer id="pageFooter">Footer</footer>
+  </body>
+</html>
