@@ -1,0 +1,43 @@
+<!-- Priority vs Specific
+Priority -> which one to be picked to apply/run/execute
+Specific -> exact certain things -->
+<!-- inline > internal > external (this understanding is wrong)-->
+<!-- cascading (priority) from top to down -->
+<!-- important - it apply spcific css property to the element-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        color: rgb(184, 184, 98) !important;
+      }
+
+      span {
+        color: tomato;
+      }
+
+      div {
+        color: blue;
+      }
+
+      h1 {
+        background-color: cadetblue !important;
+      }
+    </style>
+    <!-- <link href="./style.css" rel="stylesheet" /> -->
+  </head>
+  <body>
+    <div style="color: green">
+      <span style="color: blue">This is the Para 1</span>
+      <br />
+      <span>This is the Para 2</span>
+    </div>
+    <div>
+      <h1 style="background-color: dodgerblue">This is the heading</h1>
+    </div>
+  </body>
+</html>

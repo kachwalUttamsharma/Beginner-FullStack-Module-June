@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 10px;
+        padding: 10px;
+      }
+      #container {
+        width: 50%;
+        height: 200px;
+        border: 2px solid grey;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #card {
+        /* background-color: tomato; */
+        width: 120px;
+        height: 120px;
+        /*
+        Horizontal offset -  increasing shadow horizontally
+        vertical offset - increasing shadow vertically
+        blur - bluring the shadow
+        spread - how far shadow should reach
+        */
+        box-shadow: 1px 2px 3px 4px rgba(78, 0, 6, 0.4);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="card">Card</div>
+    </div>
+  </body>
+</html>

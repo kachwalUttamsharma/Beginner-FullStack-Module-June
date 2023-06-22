@@ -76,3 +76,27 @@ Scaler Full Stack Module Beginner Curriculum
     3. FlexBox Example
             > navigation bar
             > cards
+
+## class - 6
+
+    1. CSS Grid
+          -> container related properties
+            > place items
+            > place content
+            > grid-template-column
+            > grid-template-row
+            > grid-auto-flow
+            > gap
+        -> items related properties
+            > place self
+            > grid-row, grid-column
+
+## class - 7
+
+    1. Specificity
+    2. Inheritance
+    3. Box Shadow
+    4. Z-index
+
+
+

@@ -1,0 +1,30 @@
+<!-- unset -->
+<!-- it works like both inherit and intial -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* html {
+        color: red;
+      } */
+      div {
+        color: green;
+      }
+      .div {
+        margin-top: 8px;
+        padding: 50px;
+        background-color: orange;
+        color: unset;
+        /* <!-- inherit--> */
+        /* with comment of html css it works as initial */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div">Hello</div>
+  </body>
+</html>

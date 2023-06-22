@@ -1,0 +1,50 @@
+<!--
+Inline Styles                               - 1000
+ID selectors                                -  100
+Classes, Attributes and Pseudo-classes      -   10
+Elements and Pseudo-elements                -    1 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Specificity</title>
+    <style>
+      li {
+        color: red;
+      }
+
+      li {
+        color: blue;
+      }
+
+      /*specificity order (id, class, element) */
+      /* id- 100, clas - 10, element- 1*/
+      /* inlines style take 1000 position */
+      /* style, id, class, element*/
+      /* (1,1,2) > (1,0,2)*/
+      /*  2 element selector 
+          1 id selector  
+          1 class selector*/
+      ul#fruits li.favourite {
+        color: red;
+      }
+
+      /*  2 element selector 
+          1 id selector  */
+      ul#fruits li {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="fruits">
+      <li>Apple</li>
+      <li class="favourite">Mango</li>
+      <li>Orange</li>
+    </ul>
+  </body>
+</html>
