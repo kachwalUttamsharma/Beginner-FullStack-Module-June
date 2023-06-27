@@ -98,5 +98,11 @@ Scaler Full Stack Module Beginner Curriculum
     3. Box Shadow
     4. Z-index
 
+## class - 8
 
-
+    1. Introduction to JS
+    2. Node.js usage and installation
+    3. Ways of Linking HTML and JavaScript
+    4. Variable
+    5. Data Types
+    6. Arrays in Depth
