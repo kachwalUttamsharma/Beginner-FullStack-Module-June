@@ -106,3 +106,12 @@ Scaler Full Stack Module Beginner Curriculum
     4. Variable
     5. Data Types
     6. Arrays in Depth
+
+## class - 9
+
+    1. Execution Context
+    2. Hoisting
+    3. Primitive vs Reference Data Type
+    4. Spread vs Rest Operator
+    5. Functions in depth
+    6. Objects in depth
