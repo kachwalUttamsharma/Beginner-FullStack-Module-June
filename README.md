@@ -115,3 +115,10 @@ Scaler Full Stack Module Beginner Curriculum
     4. Spread vs Rest Operator
     5. Functions in depth
     6. Objects in depth
+
+## class - 10
+
+    1. revisting Destructing and Spread Operator
+    2. CallBacks
+    3. Higher Order Functions
+    4. Built-In HOF (Map, Reduce, Filter)
