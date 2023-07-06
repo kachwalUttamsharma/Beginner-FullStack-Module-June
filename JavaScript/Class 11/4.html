@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /**
+     * px -> absolute units
+     * vh,vw, rem, em, % -> relative units 
+     default sixe of rem = 16px
+     */
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        font-size: 6px;
+      }
+
+      body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding-top: 5rem;
+      }
+
+      .blue {
+        background-color: blue;
+        box-shadow: 0px 0px 6px 5px;
+      }
+
+      .green {
+        background-color: green;
+        box-shadow: 0px 0px 6px 5px;
+      }
+
+      .red {
+        background-color: red;
+        box-shadow: 0px 0px 6px 5px;
+      }
+
+      .card {
+        border: 1px solid;
+        height: 10rem;
+        width: 10rem;
+        margin: 2rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="card" data-color="blue"></div>
+    <div class="card" data-color="red"></div>
+    <div class="card" data-color="blue"></div>
+    <div class="card" data-color="red"></div>
+    <div class="card" data-color="red"></div>
+    <div class="card" data-color="blue"></div>
+    <div class="card" data-color="green"></div>
+    <div class="card" data-color="blue"></div>
+    <div class="card" data-color="green"></div>
+    <div class="card" data-color="blue"></div>
+    <script>
+      // Q Write a script which fetches the data-color attribute of the card on
+      //double clicking on them and attaches the fetched class to that card.
+      // Also change the data-color attribute to "used"
+
+      // <div class="card" data-color="blue"></div> -> double click
+      // <div class="card blue" data-color="used"></div>
+
+      // read operation
+      let cardNodeList = document.querySelectorAll(".card");
+      //   console.log(cardNodeList);
+      //   console.log(typeof cardNodeList);
+
+      for (let i = 0; i < cardNodeList.length; i++) {
+        // we added event (double click) listned to all cards
+        cardNodeList[i].addEventListener("dblclick", function (e) {
+          // we fetched data-color, so that we can apply new class
+          let classTobeAttached = e.currentTarget.getAttribute("data-color");
+          // we attached the value of data-color to class
+          e.currentTarget.classList.add(classTobeAttached);
+          // then we updated data-color attribute to used
+          e.currentTarget.setAttribute("data-color", "used");
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -122,3 +122,12 @@ Scaler Full Stack Module Beginner Curriculum
     2. CallBacks
     3. Higher Order Functions
     4. Built-In HOF (Map, Reduce, Filter)
+
+## class - 11
+
+    1. Imperative vs dcalrative coding
+    2. Introduction DOM & Web API
+    3. How we can access elements from DOM
+    4. How we can add event listener to element or node
+    5. How we create new element
+    6. How we can update and append elements to DOM

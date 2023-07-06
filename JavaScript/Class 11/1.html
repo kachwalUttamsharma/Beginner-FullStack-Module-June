@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        flex-direction: column;
+      }
+      button {
+        height: 200px;
+        width: 300px;
+        background-color: tomato;
+      }
+      div {
+        height: 200px;
+        width: 300px;
+        background-color: dodgerblue;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn-1" class="btnClass">Say Hello</button>
+    <script>
+      //Q1 on Clicking the Button append hello to the page
+      //The Document method querySelector() returns the first Element within
+      //the document that matches the specified selector,
+      //or group of selectors. If no matches are found, null is returned.
+
+      // CRUD - create, read, update, delete
+      // get call (read operations)
+      //document.getElementsByTagName("button")
+      //document.getElementById("btn-1")
+      //document.getElementsByClassName("btnClass")
+      //document.querySelector("#btn-1")
+      //document.querySelector(".btnClass")
+      let btn = document.querySelector("#btn-1");
+      btn.addEventListener("click", function (event) {
+        console.log("from event listener", event);
+
+        let divElem = document.createElement("div");
+        divElem.innerText = "Hello";
+        // <div>Hello</div> creation
+
+        // update the DOM
+        let body = document.querySelector("body");
+        body.appendChild(divElem);
+      });
+      //console.log(btn);
+    </script>
+  </body>
+</html>

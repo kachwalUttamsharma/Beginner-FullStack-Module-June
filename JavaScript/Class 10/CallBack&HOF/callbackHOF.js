@@ -110,3 +110,8 @@ let finaldiameter = calculate(myRadiusArr, circleDiameterFn);
 console.log("This is Area Array -> ", finalAreas);
 console.log("This is Circumference Array -> ", finalCircumferences);
 console.log("This is Diamter Array -> ", finaldiameter);
+
+// --------------------------------------------------------------------
+
+// version-3  convert above code into declarative code
+// using inbuilt HOF functions
