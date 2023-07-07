@@ -115,3 +115,16 @@ console.log("This is Diamter Array -> ", finaldiameter);
 
 // version-3  convert above code into declarative code
 // using inbuilt HOF functions
+const finalAreasV3 = myRadiusArr.map((radius) => {
+  return Math.PI * radius * radius;
+});
+const finalCircumferencesV3 = myRadiusArr.map((radius) => {
+  return 2 * Math.PI * radius;
+});
+const finaldiameterV3 = myRadiusArr.map((radius) => {
+  return 2 * radius;
+});
+
+console.log("This is Area Array V3 -> ", finalAreasV3);
+console.log("This is Circumference Array V3 -> ", finalCircumferencesV3);
+console.log("This is Diamter Array V3 -> ", finaldiameterV3);
