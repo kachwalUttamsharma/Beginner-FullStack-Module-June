@@ -131,3 +131,18 @@ Scaler Full Stack Module Beginner Curriculum
     4. How we can add event listener to element or node
     5. How we create new element
     6. How we can update and append elements to DOM
+
+## Class - 12
+
+    Events
+
+    1. Click
+    2. dblclick
+    3. change
+    4. keydown
+    5. keyup
+    6. mouseout
+    7. mouseover
+    8. scroll
+
+    addeventlistner -> HOF and it takes callback function where you write actual implementation logic
