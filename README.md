@@ -146,3 +146,12 @@ Scaler Full Stack Module Beginner Curriculum
     8. scroll
 
     addeventlistner -> HOF and it takes callback function where you write actual implementation logic
+
+## Class - 13 Weather APP Javascript/projects/weatherapp
+
+        Api link -> https://www.weatherapi.com/login.aspx
+
+        Json -> https://www.w3schools.com/js/js_json_intro.asp
+
+        Api -> https://aws.amazon.com/what-is/api/#:~:text=on%20your%20phone.-,What%20does%20API%20stand%20for%3F,of%20service%20between%20two%20applications.
+        https://www.freecodecamp.org/news/what-is-an-api-in-english-please-b880a3214a82/
