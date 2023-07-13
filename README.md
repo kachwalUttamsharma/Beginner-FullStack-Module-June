@@ -155,3 +155,11 @@ Scaler Full Stack Module Beginner Curriculum
 
         Api -> https://aws.amazon.com/what-is/api/#:~:text=on%20your%20phone.-,What%20does%20API%20stand%20for%3F,of%20service%20between%20two%20applications.
         https://www.freecodecamp.org/news/what-is-an-api-in-english-please-b880a3214a82/
+
+## Class - 14 Kanban Board
+
+    Part - 1
+    ## Requirement Discussion and Wireframe Discussion
+    1. HTML Mock for NavBar(Tool Bar), Ticket Creation Part, Ticket Viewing Part
+    2. Applied CSS for above mentioned Sections
+    3. Toogle Tocket Creation part

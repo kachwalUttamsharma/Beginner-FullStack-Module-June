@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* ToolBox or Navbar CSS */
+
+.toolbox-cont {
+  height: 5rem;
+  background-color: #4b4b4b;
+  display: flex;
+  align-items: center;
+}
+
+.toolbox-cont > * {
+  margin-left: 4rem;
+}
+
+/* priority container */
+.toolbox-priority-cont {
+  height: 3.5rem;
+  width: 18rem;
+  background-color: #3d3d3d;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.color {
+  height: 1.5rem;
+  width: 3rem;
+}
+
+/* .toolbox-priority-cont > *: hover */
+.color:hover {
+  background-color: #485460;
+}
+
+.lightpink {
+  background-color: lightpink;
+}
+
+.lightgreen {
+  background-color: lightgreen;
+}
+
+.lightblue {
+  background-color: lightblue;
+}
+
+.black {
+  background-color: black;
+}
+
+/* button container */
+
+.action-btn-cont {
+  height: 3.5rem;
+  width: 8rem;
+  background-color: #3d3d3d;
+  display: flex;
+}
+
+.action-btn-cont > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  font-size: 2rem;
+  color: white;
+}
+
+.add-btn:hover {
+  background-color: #4bb543;
+}
+
+.remove-btn:hover {
+  background-color: #4bb543;
+}
+
+/* Ticket creation container*/
+
+.modal-cont {
+  /* vh, vw */
+  height: 50vh;
+  width: 45vw;
+  background-color: lightsalmon;
+  z-index: 5;
+  position: absolute;
+  top: 30%;
+  left: 27%;
+  display: none;
+}
+
+.textArea-cont {
+  height: 100%;
+  width: 75%;
+  resize: none;
+  outline: none;
+  border: none;
+  background-color: #dfe4ea;
+  font-size: 1.5rem;
+}
+
+.priority-colors-cont {
+  height: 100%;
+  width: 25%;
+  background-color: #4b4b4b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.priority-color {
+  height: 3rem;
+  width: 5rem;
+}
+
+/* Ticket */
+
+.main-ticket-cont {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.ticket-cont {
+  height: 12rem;
+  width: 14rem;
+  background-color: coral;
+  /* margin: 2rem; */
+}
+
+.ticket-color {
+  height: 1rem;
+  background-color: black;
+}
+
+.ticket-id {
+  height: 2rem;
+  background-color: yellow;
+  font-size: 1rem;
+}
+
+.task-area {
+  font-size: 1rem;
+  height: 5rem;
+  background-color: coral;
+  display: flex;
+  flex-wrap: wrap;
+}
