@@ -140,7 +140,6 @@ body {
 
 .ticket-color {
   height: 1rem;
-  background-color: black;
 }
 
 .ticket-id {
@@ -155,4 +154,8 @@ body {
   background-color: coral;
   display: flex;
   flex-wrap: wrap;
+}
+
+.active {
+  border: 5px solid lightsalmon;
 }
