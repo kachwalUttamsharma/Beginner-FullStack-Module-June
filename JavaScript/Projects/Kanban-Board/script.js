@@ -3,11 +3,23 @@ const modalCont = document.querySelector(".modal-cont");
 const mainTicketCont = document.querySelector(".main-ticket-cont");
 const textArea = document.querySelector(".textArea-cont");
 const allPriorityColor = document.querySelectorAll(".priority-color");
+const removeBtn = document.querySelector(".remove-btn");
 
 let addTaskFlag = false;
+let removeTaskFlag = false;
 let modalPriorityColor = "black";
 // adding event listner to priority color
 
+removeBtn.addEventListener("click", () => {
+  removeTaskFlag = !removeTaskFlag;
+
+  if (removeTaskFlag === true) {
+    window.alert("Delete Button Has Been Activated");
+    removeBtn.style.color = "red";
+  } else {
+    removeBtn.style.color = "white";
+  }
+});
 /**
  * Clean Up Active Class
  */
@@ -63,4 +75,13 @@ const createTicket = (taskInfo, taskPriorityColor) => {
   </div>`;
 
   mainTicketCont.appendChild(ticketCont);
+  handleRemove(ticketCont);
+};
+
+const handleRemove = (ticket) => {
+  ticket.addEventListener("click", () => {
+    if (removeTaskFlag === true) {
+      ticket.remove();
+    }
+  });
 };
