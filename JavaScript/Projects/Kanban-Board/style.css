@@ -116,6 +116,13 @@ body {
   justify-content: space-evenly;
 }
 
+.ticket-lock {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 35px;
+  font-size: 1.5rem;
+  margin-right: 5px;
+}
 .priority-color {
   height: 3rem;
   width: 5rem;

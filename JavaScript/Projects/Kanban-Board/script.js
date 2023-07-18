@@ -72,16 +72,41 @@ const createTicket = (taskInfo, taskPriorityColor) => {
   <div class="ticket-id">${ticketId}</div>
   <div class="task-area">
     ${taskInfo}
-  </div>`;
+  </div>
+  <div class="ticket-lock">
+          <i class="fa-solid fa-lock"></i>
+        </div>`;
 
   mainTicketCont.appendChild(ticketCont);
   handleRemove(ticketCont);
+  handleLock(ticketCont);
 };
+
+let lockClass = "fa-lock";
+let unLockClass = "fa-lock-open";
 
 const handleRemove = (ticket) => {
   ticket.addEventListener("click", () => {
     if (removeTaskFlag === true) {
       ticket.remove();
+    }
+  });
+};
+
+const handleLock = (ticket) => {
+  let ticketLockElem = ticket.querySelector(".ticket-lock");
+  let ticketLockIcon = ticketLockElem.children[0];
+  let ticketTaskArea = ticket.querySelector(".task-area");
+
+  ticketLockIcon.addEventListener("click", () => {
+    if (ticketLockIcon.classList.contains(lockClass)) {
+      ticketLockIcon.classList.remove(lockClass);
+      ticketLockIcon.classList.add(unLockClass);
+      ticketTaskArea.setAttribute("contenteditable", "true");
+    } else {
+      ticketLockIcon.classList.remove(unLockClass);
+      ticketLockIcon.classList.add(lockClass);
+      ticketTaskArea.setAttribute("contenteditable", "false");
     }
   });
 };
