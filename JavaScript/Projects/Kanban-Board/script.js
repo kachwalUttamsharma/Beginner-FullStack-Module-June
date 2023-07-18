@@ -80,6 +80,7 @@ const createTicket = (taskInfo, taskPriorityColor) => {
   mainTicketCont.appendChild(ticketCont);
   handleRemove(ticketCont);
   handleLock(ticketCont);
+  handleColor(ticketCont);
 };
 
 let lockClass = "fa-lock";
@@ -108,5 +109,29 @@ const handleLock = (ticket) => {
       ticketLockIcon.classList.add(lockClass);
       ticketTaskArea.setAttribute("contenteditable", "false");
     }
+  });
+};
+
+const colors = ["lightpink", "lightgreen", "lightblue", "black"];
+
+const handleColor = (ticket) => {
+  let ticketColorBand = ticket.querySelector(".ticket-color");
+
+  ticketColorBand.addEventListener("click", () => {
+    // we need to find color of the band and then index of color from colors array
+    // we need to update color of band with next index of array
+    let currentColor = "";
+    for (let i = 0; i < ticketColorBand.classList.length; i++) {
+      if (ticketColorBand.classList[i] != "ticket-color") {
+        currentColor = ticketColorBand.classList[i];
+      }
+    }
+    console.log("current color ", currentColor);
+    let currentColorIndex = colors.findIndex((color) => {
+      return color === currentColor;
+    });
+    let newTicketColor = colors[(currentColorIndex + 1) % colors.length];
+    ticketColorBand.classList.remove(currentColor);
+    ticketColorBand.classList.add(newTicketColor);
   });
 };
