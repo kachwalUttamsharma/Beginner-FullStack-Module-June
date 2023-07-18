@@ -4,6 +4,29 @@ const mainTicketCont = document.querySelector(".main-ticket-cont");
 const textArea = document.querySelector(".textArea-cont");
 const allPriorityColor = document.querySelectorAll(".priority-color");
 const removeBtn = document.querySelector(".remove-btn");
+const toolBoxColors = document.querySelectorAll(".color");
+
+const ticketArr = [];
+
+for (let i = 0; i < toolBoxColors.length; i++) {
+  toolBoxColors[i].addEventListener("click", () => {
+    const selectedToolBoxColor = toolBoxColors[i].classList[0];
+
+    const filteredTicket = ticketArr.filter((ticket) => {
+      return selectedToolBoxColor === ticket.taskPriorityColor;
+    });
+
+    const allTickets = document.querySelectorAll(".ticket-cont");
+
+    for (let i = 0; i < allTickets.length; i++) {
+      allTickets[i].remove();
+    }
+    // document.querySelector(".main-ticket-cont").innerHTML = "";
+    filteredTicket.forEach((ticket) => {
+      createTicket(ticket.taskInfo, ticket.taskPriorityColor, ticket.ticketId);
+    });
+  });
+}
 
 let addTaskFlag = false;
 let removeTaskFlag = false;
@@ -55,16 +78,16 @@ modalCont.addEventListener("keydown", (event) => {
   let key = event.key;
 
   if (key === "Shift") {
-    createTicket(textArea.value, modalPriorityColor);
+    const ticketId = shortid();
+    createTicket(textArea.value, modalPriorityColor, ticketId);
     modalCont.style.display = "none";
     textArea.value = "";
   }
 });
 
-const createTicket = (taskInfo, taskPriorityColor) => {
-  const ticketId = shortid();
+const createTicket = (taskInfo, taskPriorityColor, ticketId) => {
   // create a element
-  let ticketCont = document.createElement("div");
+  const ticketCont = document.createElement("div");
   // adding attribute to created element
   ticketCont.setAttribute("class", "ticket-cont");
 
@@ -76,15 +99,24 @@ const createTicket = (taskInfo, taskPriorityColor) => {
   <div class="ticket-lock">
           <i class="fa-solid fa-lock"></i>
         </div>`;
-
+  let toAdd = true;
+  for (let i = 0; i < ticketArr.length; i++) {
+    if (ticketArr[i].ticketId == ticketId) {
+      toAdd = false;
+    }
+  }
+  if (toAdd == true) {
+    ticketArr.push({ taskPriorityColor, ticketId, taskInfo });
+  }
+  //ticketArr.push({ taskPriorityColor, ticketId, taskInfo });
   mainTicketCont.appendChild(ticketCont);
   handleRemove(ticketCont);
   handleLock(ticketCont);
   handleColor(ticketCont);
 };
 
-let lockClass = "fa-lock";
-let unLockClass = "fa-lock-open";
+const lockClass = "fa-lock";
+const unLockClass = "fa-lock-open";
 
 const handleRemove = (ticket) => {
   ticket.addEventListener("click", () => {
@@ -95,9 +127,9 @@ const handleRemove = (ticket) => {
 };
 
 const handleLock = (ticket) => {
-  let ticketLockElem = ticket.querySelector(".ticket-lock");
-  let ticketLockIcon = ticketLockElem.children[0];
-  let ticketTaskArea = ticket.querySelector(".task-area");
+  const ticketLockElem = ticket.querySelector(".ticket-lock");
+  const ticketLockIcon = ticketLockElem.children[0];
+  const ticketTaskArea = ticket.querySelector(".task-area");
 
   ticketLockIcon.addEventListener("click", () => {
     if (ticketLockIcon.classList.contains(lockClass)) {
@@ -115,7 +147,7 @@ const handleLock = (ticket) => {
 const colors = ["lightpink", "lightgreen", "lightblue", "black"];
 
 const handleColor = (ticket) => {
-  let ticketColorBand = ticket.querySelector(".ticket-color");
+  const ticketColorBand = ticket.querySelector(".ticket-color");
 
   ticketColorBand.addEventListener("click", () => {
     // we need to find color of the band and then index of color from colors array
@@ -126,11 +158,10 @@ const handleColor = (ticket) => {
         currentColor = ticketColorBand.classList[i];
       }
     }
-    console.log("current color ", currentColor);
-    let currentColorIndex = colors.findIndex((color) => {
+    const currentColorIndex = colors.findIndex((color) => {
       return color === currentColor;
     });
-    let newTicketColor = colors[(currentColorIndex + 1) % colors.length];
+    const newTicketColor = colors[(currentColorIndex + 1) % colors.length];
     ticketColorBand.classList.remove(currentColor);
     ticketColorBand.classList.add(newTicketColor);
   });
