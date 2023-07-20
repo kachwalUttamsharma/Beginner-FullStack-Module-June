@@ -169,3 +169,16 @@ Scaler Full Stack Module Beginner Curriculum
     Part - 2
     1. Dynamic way of creating Ticket
     2. Handling Deleting of Ticket using Remove Button
+
+## Class - 16 Kanban Board
+
+    Part- 3
+    1. locking mechanism
+    2. filtering mechanism
+    3. handling task status
+
+## Class - 17 Local Storage & Event Propagation & Star Component
+
+    1. Understanding Local Storage and using it in kanban board
+    2. Event Propagation - Bubbling and capturing
+    3. Star Component - Machine Coding

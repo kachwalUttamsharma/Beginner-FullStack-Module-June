@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Propagation</title>
+    <style>
+      div {
+        min-height: 100px;
+        min-width: 100px;
+        padding: 20px;
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="grandParent">
+      <div id="parent">
+        <div id="child"></div>
+      </div>
+    </div>
+  </body>
+  <script>
+    // bubbling -> bubbles out the event to parent until root element
+    let grandParentDiv = document.querySelector("#grandParent");
+    let parentDiv = document.querySelector("#parent");
+    let childDiv = document.querySelector("#child");
+
+    grandParentDiv.addEventListener(
+      "click",
+      () => {
+        console.log("grand Parent");
+      },
+      false
+    ); //useCapture
+    parentDiv.addEventListener(
+      "click",
+      () => {
+        console.log("Parent");
+      },
+      true
+    );
+    childDiv.addEventListener(
+      "click",
+      (event) => {
+        //event.stopPropagation();
+        console.log("child");
+      },
+      true
+    );
+  </script>
+</html>
