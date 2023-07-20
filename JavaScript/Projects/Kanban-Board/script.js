@@ -6,7 +6,14 @@ const allPriorityColor = document.querySelectorAll(".priority-color");
 const removeBtn = document.querySelector(".remove-btn");
 const toolBoxColors = document.querySelectorAll(".color");
 
-const ticketArr = [];
+let ticketArr = [];
+
+if (localStorage.getItem("taskTickets")) {
+  ticketArr = JSON.parse(localStorage.getItem("taskTickets"));
+  ticketArr.forEach((ticket) => {
+    createTicket(ticket.taskInfo, ticket.taskPriorityColor, ticket.ticketId);
+  });
+}
 
 for (let i = 0; i < toolBoxColors.length; i++) {
   toolBoxColors[i].addEventListener("click", () => {
@@ -23,6 +30,19 @@ for (let i = 0; i < toolBoxColors.length; i++) {
     }
     // document.querySelector(".main-ticket-cont").innerHTML = "";
     filteredTicket.forEach((ticket) => {
+      createTicket(ticket.taskInfo, ticket.taskPriorityColor, ticket.ticketId);
+    });
+  });
+
+  // show all tickets logic
+  toolBoxColors[i].addEventListener("dblclick", () => {
+    let allTickets = document.querySelectorAll(".ticket-cont");
+
+    for (let i = 0; i < allTickets.length; i++) {
+      allTickets[i].remove();
+    }
+
+    ticketArr.forEach((ticket) => {
       createTicket(ticket.taskInfo, ticket.taskPriorityColor, ticket.ticketId);
     });
   });
@@ -85,7 +105,7 @@ modalCont.addEventListener("keydown", (event) => {
   }
 });
 
-const createTicket = (taskInfo, taskPriorityColor, ticketId) => {
+function createTicket(taskInfo, taskPriorityColor, ticketId) {
   // create a element
   const ticketCont = document.createElement("div");
   // adding attribute to created element
@@ -107,26 +127,32 @@ const createTicket = (taskInfo, taskPriorityColor, ticketId) => {
   }
   if (toAdd == true) {
     ticketArr.push({ taskPriorityColor, ticketId, taskInfo });
+    localStorage.setItem("taskTickets", JSON.stringify(ticketArr));
   }
   //ticketArr.push({ taskPriorityColor, ticketId, taskInfo });
   mainTicketCont.appendChild(ticketCont);
-  handleRemove(ticketCont);
-  handleLock(ticketCont);
-  handleColor(ticketCont);
-};
+  handleRemove(ticketCont, ticketId);
+  handleLock(ticketCont, ticketId);
+  handleColor(ticketCont, ticketId);
+}
 
 const lockClass = "fa-lock";
 const unLockClass = "fa-lock-open";
 
-const handleRemove = (ticket) => {
+function handleRemove(ticket, id) {
   ticket.addEventListener("click", () => {
     if (removeTaskFlag === true) {
+      let ticketIndex = getTicketIdx(id);
+      // delete a ticket
+      // splice(index of item to be removed, how many items to be removed)
+      ticketArr.splice(ticketIndex, 1);
+      localStorage.setItem("taskTickets", JSON.stringify(ticketArr));
       ticket.remove();
     }
   });
-};
+}
 
-const handleLock = (ticket) => {
+function handleLock(ticket, id) {
   const ticketLockElem = ticket.querySelector(".ticket-lock");
   const ticketLockIcon = ticketLockElem.children[0];
   const ticketTaskArea = ticket.querySelector(".task-area");
@@ -141,12 +167,16 @@ const handleLock = (ticket) => {
       ticketLockIcon.classList.add(lockClass);
       ticketTaskArea.setAttribute("contenteditable", "false");
     }
+
+    let ticketIndex = getTicketIdx(id);
+    ticketArr[ticketIndex].taskInfo = ticketTaskArea.innerText;
+    localStorage.setItem("taskTickets", JSON.stringify(ticketArr));
   });
-};
+}
 
 const colors = ["lightpink", "lightgreen", "lightblue", "black"];
 
-const handleColor = (ticket) => {
+function handleColor(ticket, id) {
   const ticketColorBand = ticket.querySelector(".ticket-color");
 
   ticketColorBand.addEventListener("click", () => {
@@ -164,5 +194,16 @@ const handleColor = (ticket) => {
     const newTicketColor = colors[(currentColorIndex + 1) % colors.length];
     ticketColorBand.classList.remove(currentColor);
     ticketColorBand.classList.add(newTicketColor);
+
+    let ticketIndex = getTicketIdx(id);
+    ticketArr[ticketIndex].taskPriorityColor = newTicketColor;
+    localStorage.setItem("taskTickets", JSON.stringify(ticketArr));
   });
-};
+}
+
+/** Fetching the index of ticketArr using id of ticket which is edited */
+function getTicketIdx(id) {
+  return ticketArr.findIndex((ticket) => {
+    return ticket.ticketId === id;
+  });
+}
