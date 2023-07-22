@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  border-radius: 8px;
+  margin: 10px;
+  padding: 10px;
+}
+
+#number {
+  font-size: larger;
+  font-weight: bold;
+  color: tomato;
+}
+
+#add {
+  background-color: teal;
+  margin: 10px 0px;
+}
+
+#substract {
+  background-color: royalblue;
+  margin: 10px 0px;
+}
+
+#reset {
+  outline: none;
+  border-radius: 8px;
+  background-color: salmon;
+}
+
+#increment_value {
+  padding: 3px;
+  border-radius: 8px;
+}

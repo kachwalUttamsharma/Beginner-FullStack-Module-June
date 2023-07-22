@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul {
+        border: 2px solid gray;
+        border-radius: 8px;
+        width: 300px;
+        height: 150px;
+      }
+
+      li {
+        border: 2px solid gray;
+        border-radius: 8px;
+        margin: 5px;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="categories">
+      <li id="headphones">HeadPhone</li>
+      <li id="mobile">MobilePhones</li>
+      <li id="laptop">Laptop</li>
+    </ul>
+  </body>
+  <script>
+    let categories = document.getElementById("categories");
+    // let headphones = document.getElementById("headphones");
+    // let mobile = document.getElementById("mobile");
+    // let laptop = document.getElementById("laptop");
+
+    // mobile.addEventListener("click", () => {
+    //   console.log("mobile has been clicked");
+    // });
+
+    // laptop.addEventListener("click", () => {
+    //   console.log("laptop has been clicked");
+    // });
+    // headphones.addEventListener("click", () => {
+    //   console.log("headphones has been clicked");
+    // });
+
+    // Application of Event Bubbling or Capturing
+    // idea is here that we try to optimse code using event bubbling concept
+    // avoiding event listners added child elements and attaching directly to parents
+    categories.addEventListener(
+      "click",
+      (event) => {
+        console.log(event.target);
+        console.log("categories has been clicked");
+        window.location.href = "/" + event.target.id;
+        window.location.href = "http://www.google.com";
+      },
+      true
+    );
+  </script>
+</html>

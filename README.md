@@ -182,3 +182,9 @@ Scaler Full Stack Module Beginner Curriculum
     1. Understanding Local Storage and using it in kanban board
     2. Event Propagation - Bubbling and capturing
     3. Star Component - Machine Coding
+
+## Class - 18 Machine Coding & Event Delegation
+
+    1. Counter
+    2. Nested Comments
+    3. Event Delegation
