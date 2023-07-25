@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SetTimout and ClearTimeout</title>
+    <style>
+      div {
+        height: 200px;
+        width: 200px;
+        background-color: tomato;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>SetTimout & ClearTimeout</h1>
+    <div>I am the div</div>
+    <button>Stop Animation</button>
+  </body>
+
+  <script>
+    // setTimeout(() => {
+    //   console.log("I am from callback of settimeout 1");
+    // }, 3100);
+
+    // setTimeout(() => {
+    //   console.log("elon");
+    // }, 2000);
+
+    // setTimeout(() => {
+    //   console.log("I am from callback of settimeout 2");
+    // }, 3000);
+
+    const startAnimation = () => {
+      let target = document.querySelector("div");
+      target.style.width = "400px";
+    };
+
+    let timer = setTimeout(startAnimation, 4000);
+    const btn = document.querySelector("button");
+
+    const stopAnimation = () => {
+      console.log("inside stop animation");
+      clearTimeout(timer);
+    };
+    btn.addEventListener("click", stopAnimation);
+  </script>
+</html>

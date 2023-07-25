@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Throttle</title>
+    <style>
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 5px solid black;
+        padding: 10px;
+        margin: 10px;
+        width: 200px;
+        height: 200px;
+      }
+
+      input {
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <label>Search</label>
+      <input type="text" placeholder="type here to search" />
+    </div>
+  </body>
+
+  <script>
+    let count = 0;
+    const optFn = () => {
+      console.log("Network Request Count  => ", count);
+      count++;
+    };
+    const throttleOptimisedFunction = (func, delay) => {
+      let flag = true;
+      return function () {
+        if (flag == true) {
+          func();
+          flag = false;
+
+          setTimeout(() => {
+            flag = true;
+          }, 1000);
+        }
+      };
+    };
+
+    let input = document.querySelector("input");
+    input.addEventListener("keydown", throttleOptimisedFunction(optFn, 500));
+  </script>
+</html>
