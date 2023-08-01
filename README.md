@@ -188,3 +188,16 @@ Scaler Full Stack Module Beginner Curriculum
     1. Counter
     2. Nested Comments
     3. Event Delegation
+
+## Class - 19  Async JS Beginging
+
+    1. SetTimeout
+    2. Debounce
+    3. Throtling
+    4. Async vs Defer uscases
+
+## Class - 20 JS OOPS
+
+    1. This keyword -> node.js and browser context with strict and no-strict mode
+    2. Constructor function    
+
