@@ -21,22 +21,28 @@
 
 // console.log(Teacher.getFullInfo());
 
-function getFullInfo() {
+function getFullInfo(city, school, modeOfTravel) {
+    console.log("this keyword", this);
     console.log("My Name is", this.firstname, this.lastname, 
-    "and I learn/teach ", this.subject)
+    "and I learn/teach ", this.subject);
+    console.log("school name", school, "city", city, "mode of travel", modeOfTravel);
 }
 let Student = {
     firstname: "chandra",
     lastname: "sekhar",
     subject: "history",
-    getFullInfo: getFullInfo(this)
+
 }
 
 let Teacher = {
     firstname: "Anshuman",
     lastname: "Singh",
-    subject: "HLD",
-    getFullInfo: getFullInfo(this)
+    subject: "HLD"
 }
+let arr = ["Hyderabad", "Scaler Tech", "Bike"];
 
-console.log(Teacher.getFullInfo);
+console.log(getFullInfo.call(Teacher, arr[0], arr[1], arr[3]));
+console.log(getFullInfo.apply(Student, arr));
+const TeacherInfo = getFullInfo.bind(Teacher, arr[0], arr[1], arr[2]);
+console.log(TeacherInfo);
+TeacherInfo();
