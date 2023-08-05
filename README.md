@@ -201,7 +201,12 @@ Scaler Full Stack Module Beginner Curriculum
     1. This keyword -> node.js and browser context with strict and no-strict mode
     2. Constructor function    
 
-## Class -21  JS OOps 2
+## Class -21  JS OOPS 2
 
     1. Classes and classical inheritance
     2. Prototype and prototypical inheritance and prototype chain
+
+## Class - 22 JS OOPS 3
+
+    1. Call, Bind, Apply
+    2. Memory in JS -> Shallow Copy and Deep Copy of Objects.    
