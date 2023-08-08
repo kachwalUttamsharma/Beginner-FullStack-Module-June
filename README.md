@@ -210,3 +210,9 @@ Scaler Full Stack Module Beginner Curriculum
 
     1. Call, Bind, Apply
     2. Memory in JS -> Shallow Copy and Deep Copy of Objects.    
+
+## Class - 23 Async JS - 1
+
+    1. Synchronous vs Asynchronous
+    2. Usage of SetTimeout and callbacks in Async activity
+    3. Event Loop     

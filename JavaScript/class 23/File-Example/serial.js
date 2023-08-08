@@ -1,21 +1,4 @@
-// read data from file and console log it
 const fs = require('fs');
-
-// synchronous way
-
-// console.log("before 1");
-
-// let data1 = fs.readFileSync('f1.txt');
-// let data2 = fs.readFileSync('f2.txt');
-// let data3 = fs.readFileSync('f3.txt');
-
-// console.log('data from 2 : ', data1);
-// console.log('data from 3 : ', data2);
-// console.log('data from 4 : ', data3);
-
-// console.log("after 5");
-
-// Async way
 
 console.log("before");
 
@@ -24,6 +7,7 @@ function readFileCallback1(err, data) {
         console.log(err);
     } else {
         console.log(data.toString());
+        fs.readFile('f2.txt',readFileCallback2);
     } 
 }
 
@@ -32,6 +16,7 @@ function readFileCallback2(err, data) {
         console.log(err, data);
     } else {
         console.log(data.toString());
+        fs.readFile('f3.txt',readFileCallback3);
     } 
 }
 function readFileCallback3(err, data) {
@@ -42,8 +27,5 @@ function readFileCallback3(err, data) {
     } 
 }
 fs.readFile('f1.txt', readFileCallback1);
-fs.readFile('f2.txt',readFileCallback2);
-fs.readFile('f3.txt',readFileCallback3);
 
 console.log("after");
-
