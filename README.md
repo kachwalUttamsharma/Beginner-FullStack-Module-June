@@ -216,3 +216,9 @@ Scaler Full Stack Module Beginner Curriculum
     1. Synchronous vs Asynchronous
     2. Usage of SetTimeout and callbacks in Async activity
     3. Event Loop     
+
+## Class - 24 Async JS - 2
+
+    1. CallbackHell - Inversion of Control.
+    2. Priomises.
+    3. Priomise Chaining.    
