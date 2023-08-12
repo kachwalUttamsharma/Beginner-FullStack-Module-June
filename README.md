@@ -223,7 +223,7 @@ Scaler Full Stack Module Beginner Curriculum
     2. Priomises.
     3. Priomise Chaining.   
 
-## Class - 24 Async JS - 3
+## Class - 25 Async JS - 3
 
     1. Promise all
     2. Cafe example for promises
