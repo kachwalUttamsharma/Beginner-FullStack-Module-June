@@ -44,19 +44,41 @@ function generateBill() {
     return bill;
 }
 
-getMenu(7).then((menu) => {
-    console.log(menu);
-    return placeAnOrder("Tea", "Biscuits");
-    }).then((order) => {
-        console.log(order);
-        return serve();
-        }).then((orderbeingserved) => {
-            console.log(orderbeingserved);
-            return generateBill();
-            }).then((bill) => {
-                console.log(bill);
-                console.log("Payment is done");
-                console.log("Thank you for your service and we got out");
-                }).catch((err) => {
-                console.log(err);
-                })
+// getMenu(7).then((menu) => {
+//     console.log(menu);
+//     return placeAnOrder("Tea", "Biscuits");
+//     }).then((order) => {
+//         console.log(order);
+//         return serve();
+//         }).then((orderbeingserved) => {
+//             console.log(orderbeingserved);
+//             return generateBill();
+//             }).then((bill) => {
+//                 console.log(bill);
+//                 console.log("Payment is done");
+//                 console.log("Thank you for your service and we got out");
+//                 }).catch((err) => {
+//                 console.log(err);
+//                 })
+
+// async await -> promises -> consumers part been changes to handle events easily
+
+async function cafeFlow() {
+    try {
+        const menu = await getMenu(4);
+        const placingAnOrder = await placeAnOrder("Tea", "Biscuits");
+        const servingOrder = await serve();
+        const bill = await generateBill();
+        console.log(menu);
+        console.log(placingAnOrder);
+        console.log(servingOrder);
+        console.log(bill);
+        console.log("Payment is done");
+        console.log("Thank you for your service and we got out");
+    } catch(err) {
+        console.log(err);
+    }
+    
+}
+
+cafeFlow()
