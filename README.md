@@ -227,4 +227,11 @@ Scaler Full Stack Module Beginner Curriculum
 
     1. Promise all
     2. Cafe example for promises
-    3. Async and Await 
+    3. Async and Await
+
+## Class - 26 Interview Imp Topics - 1
+
+    1. Block vs Global Scope
+    2. Lexical Env
+    3. Closure
+    4. Function Currying     
