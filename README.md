@@ -234,4 +234,9 @@ Scaler Full Stack Module Beginner Curriculum
     1. Block vs Global Scope
     2. Lexical Env
     3. Closure
-    4. Function Currying     
+    4. Function Currying
+
+## Class - 27 Interview Imp Topics - 2
+
+    1. Continuing of Function Currying
+    2. Pollyfills for Map, Reduce, Filter
