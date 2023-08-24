@@ -240,3 +240,9 @@ Scaler Full Stack Module Beginner Curriculum
 
     1. Continuing of Function Currying
     2. Pollyfills for Map, Reduce, Filter
+
+## Class - 28 React - Introduction
+    1. Modular Way of writting Code in JS
+    2. React Journey of Dom Manipulation
+    3. Understanding problem statement for React and React Dom library
+    4. Understanding Project Structure for React.
