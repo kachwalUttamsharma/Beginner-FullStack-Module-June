@@ -246,3 +246,9 @@ Scaler Full Stack Module Beginner Curriculum
     2. React Journey of Dom Manipulation
     3. Understanding problem statement for React and React Dom library
     4. Understanding Project Structure for React.
+
+## Class - 29 React - 2
+    1. Reusability
+    2. Props
+    3. Use State
+    4. ReactDom    
