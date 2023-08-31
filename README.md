@@ -252,3 +252,8 @@ Scaler Full Stack Module Beginner Curriculum
     2. Props
     3. Use State
     4. ReactDom    
+
+## Class - 30 React - 3
+    1. List
+    2. Forms
+    3. UseEffect (ComponentDidMount, ComponentDidUpdate, ComponentDidunMount)

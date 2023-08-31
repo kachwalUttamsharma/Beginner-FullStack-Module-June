@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import './Forms.css'
 const Forms = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -32,17 +32,25 @@ const Forms = () => {
         })
     }
   return (
-    <div>
+    <div className='wrapper'>
         <h1>User Profile</h1>
-        <form onSubmit={submitHandler} style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
-            <label for="name">Name</label>
+        <form onSubmit={submitHandler} className='form'>
+            <div className='item'>
+            <label for="name">Name : </label>
             <input id="name" type='text' value={name} onChange={nameHandler}/>
-            <label for="email">Email</label>
+            </div>
+            <div className='item'>
+            <label for="email">Email : </label>
             <input id="email" type='email' value={email} onChange={emailHandler}/>
-            <label for="age">Age</label>
+            </div>
+            <div className='item'>
+            <label for="age">Age :</label>
             <input id="age" type='number' value={age} onChange={ageHandler}/>
-            <label for="occupation">occupation</label>
+            </div>
+            <div className='item'>
+            <label for="occupation">occupation : </label>
             <input id="occupation" type='text' value={occupation} onChange={occupationHandler}/>
+            </div>
             <button>Submit Form Button</button>
         </form>
     </div>
