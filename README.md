@@ -257,3 +257,9 @@ Scaler Full Stack Module Beginner Curriculum
     1. List
     2. Forms
     3. UseEffect (ComponentDidMount, ComponentDidUpdate, ComponentDidunMount)
+
+## Class - 31 React - 4 IMDB_PROJECT - 1
+
+    1. TailWind Installation
+    2. Build Home Page Components NavBar, Movies,Banner
+    3. React Router for routing to watchList
