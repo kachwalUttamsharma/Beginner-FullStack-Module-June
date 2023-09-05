@@ -263,3 +263,10 @@ Scaler Full Stack Module Beginner Curriculum
     1. TailWind Installation
     2. Build Home Page Components NavBar, Movies,Banner
     3. React Router for routing to watchList
+
+## Class - 32 React-5 IMDB_PROJECT -2
+
+    1. Introduction to axios
+    2. Integration with TMDB Api
+    3. Building Pagination Component
+    4. Loading Movies Component With api response 
