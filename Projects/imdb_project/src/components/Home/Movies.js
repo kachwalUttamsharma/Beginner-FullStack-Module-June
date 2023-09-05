@@ -1,13 +1,33 @@
 import React, { useEffect, useState } from "react";
 import { GetTrendingMovies } from "../../service/GetTrendingMovies";
+import Pagination from "./Pagination";
+import axios from 'axios';
+
 const Movies = () => {
   const [movies, setMovies] = useState([]);
+  const [counter, setCounter] = useState(1);
 
-  useEffect(async () => {
-    const result = await GetTrendingMovies();
-    setMovies(result);
-    console.log(result);
-  }, []);
+  useEffect(() => {
+    (function(){
+      axios
+      .get(`https://api.themoviedb.org/3/trending/movie/day?api_key=ed9945885ba0c6f7a7edc57b379191ae&page=${counter}`)
+      .then((res) => {
+        setMovies(res.data.results)
+      });
+    })()
+  }, [counter]);
+
+  const onNext = () => {
+    setCounter(counter+1);
+  }
+
+  const onPrev = () => {
+    if(counter == 1) {
+      setCounter(1);
+    } else {
+      setCounter(counter-1);
+    }
+  }
 
   return (
     <div>
@@ -29,6 +49,7 @@ const Movies = () => {
           );
         })}
       </div>
+      <Pagination onNext={onNext} onPrev={onPrev} counter={counter}/>
     </div>
   );
 };
