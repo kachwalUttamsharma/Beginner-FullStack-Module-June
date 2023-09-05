@@ -7,9 +7,14 @@ const Movies = () => {
   const [counter, setCounter] = useState(1);
 
   useEffect(() => {
-   GetTrendingMovies(counter).then((result) => {
+  //  GetTrendingMovies(counter).then((result) => {
+  //   setMovies(result);
+  //  })
+   async function fetchMyMovies() {
+    const result = await GetTrendingMovies(counter)
     setMovies(result);
-   })
+  }
+  fetchMyMovies()
   }, [counter]);
 
   const onNext = () => {
