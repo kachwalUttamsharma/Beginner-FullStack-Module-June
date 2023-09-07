@@ -5,6 +5,8 @@ import Pagination from "./Pagination";
 const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [counter, setCounter] = useState(1);
+  const [watchList, setWatchList] = useState([]);
+  const [hovered, setHovered] = useState('');
 
   useEffect(() => {
   //  GetTrendingMovies(counter).then((result) => {
@@ -29,6 +31,30 @@ const Movies = () => {
     }
   }
 
+  const addMovieToWatchList = (id) => {
+      const newWatchList = [...watchList, id];
+      setWatchList(newWatchList);
+      // setWatchList((prevState) => [...prevState, id]);
+      //console.log("adding ", newWatchList);
+  }
+
+  const removeMovieFromWatchList = (id) => {
+      // [1,2,3], (2) -> [1,3]
+      const filteredWatchList = watchList.filter((movieId) => {
+          return movieId !== id
+      });
+      setWatchList(filteredWatchList);
+      //console.log("removing ", filteredWatchList);
+  }
+
+  const showButton = (id) => {
+      setHovered(id);
+  }
+
+  const hideButton = () => {
+      setHovered('')
+  }
+
   return (
     <div>
       <div className="text-2xl mb-8 font-bold text-center">Trending Movies</div>
@@ -41,7 +67,19 @@ const Movies = () => {
               style={{
                 backgroundImage: `url(https://image.tmdb.org/t/p/original/t/p/w500/${movie.poster_path})`,
               }}
+              onMouseOver={() => {showButton(movie.id)}}
+              onMouseOut={hideButton}
             >
+              <div className="absolute top-2 right-2 bg-gray-900 rounded-2xl p-2 text-2xl" 
+              style={{display: hovered === movie.id ? 'block' : 'none'}}>
+                {
+                  watchList.includes(movie.id) === true ? (
+                    <button onClick={() => removeMovieFromWatchList(movie.id)}>❌</button>
+                  ) : (
+                    <button onClick={() => addMovieToWatchList(movie.id)}>😍</button>
+                  )
+                }
+              </div>
               <div className="text-white text-center font-bold w-full bg-gray-900 bg-opacity-60">
                 {movie.title}
               </div>
