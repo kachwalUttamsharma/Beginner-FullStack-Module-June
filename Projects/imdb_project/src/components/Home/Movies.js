@@ -14,6 +14,7 @@ const Movies = () => {
   //  })
    async function fetchMyMovies() {
     const result = await GetTrendingMovies(counter)
+    console.log(result);
     setMovies(result);
   }
   fetchMyMovies()
