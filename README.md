@@ -271,8 +271,14 @@ Scaler Full Stack Module Beginner Curriculum
     3. Building Pagination Component
     4. Loading Movies Component With api response 
 
-## Class - 33 React-6 IMDB_Porject - 3
+## Class - 33 React-6 IMDB_Project - 3
 
     1. Marking Movie as Favourite
     2. UnMarking Movie as Favourite
-    3. Built Table Design for showing watchlist    
+    3. Built Table Design for showing watchlist   
+
+## Class - 34 React-7 IMDB_Project - 4 
+
+    1. Sort on Ratings and popularity
+    2. Filter on Genre and Movie Search
+    3. Implementing local storage logic    
