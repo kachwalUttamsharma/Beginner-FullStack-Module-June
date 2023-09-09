@@ -32,26 +32,20 @@ const Movies = () => {
     }
   };
 
-  const addMovieToWatchList = (id) => {
-    // const newWatchList = [...watchList, id];
-    // setWatchList(newWatchList);
-    setWatchList((prevState) => [...prevState, id]);
-    //console.log("adding ", newWatchList);
+  const addMovieToWatchList = (movie) => {
+    if(!watchList.includes(movie)) {
+      const newWatchList = [...watchList, movie];
+      setWatchList(newWatchList);  
+      localStorage.setItem('imdbWatchList', JSON.stringify(newWatchList))
+    }
   };
 
-  const removeMovieFromWatchList = (id) => {
-    // [1,2,3], (2) -> [1,3]
-    //   const filteredWatchList = watchList.filter((movieId) => {
-    //     return movieId !== id
-    // });
-    // setWatchList(filteredWatchList);
-    setWatchList((prevState) => {
-      const filteredWatchList = prevState.filter((movieId) => {
-        return movieId !== id;
-      });
-      return filteredWatchList;
+  const removeMovieFromWatchList = (movie) => {
+    const filteredWatchList = watchList.filter((movieId) => {
+        return movieId !== movie.id
     });
-    //console.log("removing ", filteredWatchList);
+    setWatchList(filteredWatchList);
+    localStorage.setItem('imdbWatchList', JSON.stringify(filteredWatchList))
   };
 
   const showButton = (id) => {
@@ -83,12 +77,12 @@ const Movies = () => {
                 className="absolute top-2 right-2 bg-gray-900 rounded-2xl p-2 text-2xl"
                 style={{ display: hovered === movie.id ? "block" : "none" }}
               >
-                {watchList.includes(movie.id) === true ? (
-                  <button onClick={() => removeMovieFromWatchList(movie.id)}>
+                {watchList.includes(movie) === true ? (
+                  <button onClick={() => removeMovieFromWatchList(movie)}>
                     ❌
                   </button>
                 ) : (
-                  <button onClick={() => addMovieToWatchList(movie.id)}>
+                  <button onClick={() => addMovieToWatchList(movie)}>
                     😍
                   </button>
                 )}

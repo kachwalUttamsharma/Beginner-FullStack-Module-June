@@ -1,11 +1,11 @@
 import React from "react";
-import { watchList } from "../Mock/watchListData";
+// import { watchList } from "../Mock/watchListData";
 
-const TableBody = () => {
+const TableBody = ({movies = []}) => {
   return (
     <tbody className="divide-y divide-gray-500 border-t border-gray-100">
-      {watchList.length > 0 &&
-        watchList.map((movie) => {
+      {movies && movies.length > 0 &&
+        movies.map((movie) => {
           return (
             <tr className="hover:bg-gray-50">
               <td className="flex items-center px-6 py-4 font-normal text-gray-900 space-x-2">
