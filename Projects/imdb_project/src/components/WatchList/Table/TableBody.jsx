@@ -1,10 +1,12 @@
 import React from "react";
+import { genreids } from "../Mock/watchListData";
 // import { watchList } from "../Mock/watchListData";
 
-const TableBody = ({movies = []}) => {
+const TableBody = ({ movies = [], DeleteMovie }) => {
   return (
     <tbody className="divide-y divide-gray-500 border-t border-gray-100">
-      {movies && movies.length > 0 &&
+      {movies &&
+        movies.length > 0 &&
         movies.map((movie) => {
           return (
             <tr className="hover:bg-gray-50">
@@ -17,9 +19,18 @@ const TableBody = ({movies = []}) => {
                   {movie.title}
                 </div>
               </td>
-              <td className="py-4">{movie.vote_average}</td>
-              <td className="py-4">{movie.popularity}</td>
-              <td className="py-4">{movie.release_date}</td>
+              <td className="p-2">{movie.vote_average}</td>
+              <td className="p-2">{movie.popularity}</td>
+              <td className="p-2">{movie.release_date}</td>
+              <td className="p-2">{genreids[movie.genre_ids[0]]}</td>
+              <td>
+                <button
+                  className="text-red-600 border border-2 p-2"
+                  onClick={() => DeleteMovie(movie)}
+                >
+                  Delete
+                </button>
+              </td>
             </tr>
           );
         })}

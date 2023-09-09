@@ -2,28 +2,26 @@ import React, { useEffect, useState } from "react";
 import TableBody from "./TableBody";
 import TableHeader from "./TableHeader";
 import { genreids } from "../Mock/watchListData";
+import { filterArrOnMovies } from "./helper";
 
-const Table = ({ favourites = [] }) => {
+const Table = ({ favourites = [], setFavourites }) => {
   const [genre, setGenre] = useState([]);
   const [currGenre, setCurrGenre] = useState("All Genre");
   const [searchStr, setSearchStr ] = useState("");
+  const [sortRatings, setSortRating] =useState('');
+  const [sortPopularity, setSortPopularity] = useState('');
   useEffect(() => {
     const temp = favourites.map((movie) => genreids[movie.genre_ids[0]]);
     setGenre(["All Genre", ...temp]);
   }, [favourites]);
 
-  let filteredMovies = [];
-  // applying genre filter
-  filteredMovies =
-    currGenre === "All Genre"
-      ? favourites
-      : favourites.filter((movie) => genreids[movie.genre_ids[0]] == currGenre);
-
-  // applying search filter
-  filteredMovies = favourites.filter((movie) => {
-    return movie.title.toLowerCase().includes(searchStr.toLowerCase());
-  })    
-
+  const DeleteMovie = (movie) => {
+    const newArr = favourites.filter((m) => m.id != movie.id);
+    setFavourites(newArr);
+    localStorage.setItem('imdbWatchList', JSON.stringify(newArr));
+  }
+  const filteredMovies = filterArrOnMovies(favourites, currGenre,searchStr,sortRatings,sortPopularity);
+  
   return (
     <>
       <div className="mt-6 flex space-x-2 justify-center">
@@ -56,8 +54,8 @@ const Table = ({ favourites = [] }) => {
         />
       </div>
       <table className="w-full border-collapse bg-white text-left text-sm text-gray-500">
-        <TableHeader />
-        <TableBody movies={filteredMovies} />
+        <TableHeader setSortRating={setSortRating} setSortPopularity={setSortPopularity}/>
+        <TableBody movies={filteredMovies} DeleteMovie={DeleteMovie}/>
       </table>
     </>
   );
