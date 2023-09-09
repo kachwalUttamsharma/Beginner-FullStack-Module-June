@@ -9,12 +9,8 @@ const Movies = () => {
   const [hovered, setHovered] = useState("");
 
   useEffect(() => {
-    //  GetTrendingMovies(counter).then((result) => {
-    //   setMovies(result);
-    //  })
     async function fetchMyMovies() {
       const result = await GetTrendingMovies(counter);
-      console.log(result);
       setMovies(result);
     }
     fetchMyMovies();
@@ -41,8 +37,8 @@ const Movies = () => {
   };
 
   const removeMovieFromWatchList = (movie) => {
-    const filteredWatchList = watchList.filter((movieId) => {
-        return movieId !== movie.id
+    const filteredWatchList = watchList.filter((m) => {
+        return m.id !== movie.id
     });
     setWatchList(filteredWatchList);
     localStorage.setItem('imdbWatchList', JSON.stringify(filteredWatchList))
