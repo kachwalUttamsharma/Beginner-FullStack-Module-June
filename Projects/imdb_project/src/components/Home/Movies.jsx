@@ -9,14 +9,12 @@ const Movies = () => {
   const [hovered, setHovered] = useState("");
 
   useEffect(() => {
-    let moviesFromLS = localStorage.getItem("imdbWatchList");
-    moviesFromLS = JSON.parse(moviesFromLS) || [];
-    setWatchList(moviesFromLS);
     async function fetchMyMovies() {
       const result = await GetTrendingMovies(counter);
       setMovies(result);
     }
     fetchMyMovies();
+    setWatchList(JSON.parse(localStorage.getItem("imdbWatchList")) || []);
   }, [counter]);
 
   const onNext = () => {

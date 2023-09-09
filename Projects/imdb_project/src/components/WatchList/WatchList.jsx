@@ -16,16 +16,19 @@ const WatchList = () => {
   useEffect(() => {
     let moviesFetchedFromLocalStorage = localStorage.getItem("imdbWatchList");
     moviesFetchedFromLocalStorage = JSON.parse(moviesFetchedFromLocalStorage);
+    setFavourites(moviesFetchedFromLocalStorage);
+  }, []);
+
+  useEffect(() => {
     setGenre([
       "All Genre",
       ...new Set(
-        moviesFetchedFromLocalStorage.map(
+        favourites.map(
           (movie) => genreids[movie.genre_ids[0]]
         )
       ),
-    ]);
-    setFavourites(moviesFetchedFromLocalStorage);
-  }, []);
+    ])
+  }, [favourites])
 
   let filteredData = [];
   if (favourites && favourites.length > 0) {
