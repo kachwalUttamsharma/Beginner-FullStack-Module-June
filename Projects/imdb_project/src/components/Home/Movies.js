@@ -9,6 +9,9 @@ const Movies = () => {
   const [hovered, setHovered] = useState("");
 
   useEffect(() => {
+    let moviesFromLS = localStorage.getItem("imdbWatchList");
+    moviesFromLS = JSON.parse(moviesFromLS) || [];
+    setWatchList(moviesFromLS);
     async function fetchMyMovies() {
       const result = await GetTrendingMovies(counter);
       setMovies(result);
@@ -29,19 +32,19 @@ const Movies = () => {
   };
 
   const addMovieToWatchList = (movie) => {
-    if(!watchList.includes(movie)) {
+    if (!watchList.includes(movie)) {
       const newWatchList = [...watchList, movie];
-      setWatchList(newWatchList);  
-      localStorage.setItem('imdbWatchList', JSON.stringify(newWatchList))
+      setWatchList(newWatchList);
+      localStorage.setItem("imdbWatchList", JSON.stringify(newWatchList));
     }
   };
 
   const removeMovieFromWatchList = (movie) => {
     const filteredWatchList = watchList.filter((m) => {
-        return m.id !== movie.id
+      return m.id !== movie.id;
     });
     setWatchList(filteredWatchList);
-    localStorage.setItem('imdbWatchList', JSON.stringify(filteredWatchList))
+    localStorage.setItem("imdbWatchList", JSON.stringify(filteredWatchList));
   };
 
   const showButton = (id) => {
@@ -78,9 +81,7 @@ const Movies = () => {
                     ❌
                   </button>
                 ) : (
-                  <button onClick={() => addMovieToWatchList(movie)}>
-                    😍
-                  </button>
+                  <button onClick={() => addMovieToWatchList(movie)}>😍</button>
                 )}
               </div>
               <div className="text-white text-center font-bold w-full bg-gray-900 bg-opacity-60">

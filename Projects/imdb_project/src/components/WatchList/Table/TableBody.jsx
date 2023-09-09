@@ -7,9 +7,9 @@ const TableBody = ({ movies = [], DeleteMovie }) => {
     <tbody className="divide-y divide-gray-500 border-t border-gray-100">
       {movies &&
         movies.length > 0 &&
-        movies.map((movie) => {
+        movies.map((movie, index) => {
           return (
-            <tr className="hover:bg-gray-50">
+            <tr className="hover:bg-gray-50" key={index}>
               <td className="flex items-center px-6 py-4 font-normal text-gray-900 space-x-2">
                 <img
                   className="h-[10rem] w-[10rem] object-fit"

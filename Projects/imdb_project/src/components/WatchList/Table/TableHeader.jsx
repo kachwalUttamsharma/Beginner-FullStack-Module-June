@@ -22,17 +22,17 @@ const TableHeader = ({ setSortRating, setSortPopularity }) => {
         </th>
         <th className="p-2 m-4">
         <div className="flex">
-          {/* <img
+          <img
             className="mr-1"
             onClick={() => setSortPopularity("ascending")}
             src="https://img.icons8.com/external-those-icons-lineal-those-icons/24/000000/external-up-arrows-those-icons-lineal-those-icons-3.png"
-          /> */}
+          />
           Popularity
-          {/* <img
+          <img
             className="ml-1"
             onClick={() => setSortPopularity("desending")}
             src="https://img.icons8.com/external-those-icons-lineal-those-icons/24/000000/external-down-arrows-those-icons-lineal-those-icons-4.png"
-          /> */}
+          />
           </div>
         </th>
         <th className="p-2 m-4">Release Date</th>
