@@ -281,4 +281,11 @@ Scaler Full Stack Module Beginner Curriculum
 
     1. Sort on Ratings and popularity
     2. Filter on Genre and Movie Search
-    3. Implementing local storage logic    
+    3. Implementing local storage logic
+
+## Class - 35 React-8
+
+    1. Prop Drilling Problem
+    2. Context API - UseContext()
+    3. Ref - UseRef()
+    4. Memoization in React Components - UseMemo()        

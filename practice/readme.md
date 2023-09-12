@@ -20,3 +20,8 @@
 
 ## PolyFills
 
+
+## Machine Coding React Mini Challenges
+
+    https://sadanandpai.github.io/frontend-mini-challenges/react/dist/#/challenges
+    https://github.com/sadanandpai/frontend-mini-challenges/tree/main
