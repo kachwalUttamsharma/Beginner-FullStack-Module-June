@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import {add} from '../Store/cartSlice';
 
 const Home = () => {
 
     const [products, setProducts] = useState([]);
+    const dispatch = useDispatch();
     useEffect( () => {
         const getProducts = async () => {
             const result = await axios.get('https://fakestoreapi.com/products');
@@ -12,8 +15,9 @@ const Home = () => {
         getProducts();
     }, [])
 
-    const clickHandler = () => {
+    const clickHandler = (product) => {
         // you need to increase count and send items to cart component
+        dispatch(add(product))
     }
   return (
     <div style={{marginTop: '15px'}}>
@@ -25,7 +29,7 @@ const Home = () => {
                                 <img src={product.image}/>
                                 <h6>{product.title}</h6>
                                 <h5>{product.price}</h5>
-                                <button className='btn' onClick={clickHandler}>Add to Cart</button>
+                                <button className='btn' onClick={() => clickHandler(product)}>Add to Cart</button>
                             </div>
                         )
                     })
