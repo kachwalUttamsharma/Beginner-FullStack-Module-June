@@ -288,4 +288,11 @@ Scaler Full Stack Module Beginner Curriculum
     1. Prop Drilling Problem
     2. Context API - UseContext()
     3. Ref - UseRef()
-    4. Memoization in React Components - UseMemo()        
+    4. Memoization in React Components - UseMemo()    
+
+## Class - 36 React - 9
+
+    1. Shopping Cart Example
+    2. Redux state& reducer setup (slices & store & provider)
+    3. Consuming and update redux state using useSelector and useDispatch
+    
