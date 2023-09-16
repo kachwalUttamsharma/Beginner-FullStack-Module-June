@@ -1,27 +1,24 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {add} from '../Store/cartSlice';
-
+import { fetchProducts, STATUSES } from '../Store/productSlice';
 const Home = () => {
-
-    const [products, setProducts] = useState([]);
     const dispatch = useDispatch();
+    const {data: products, status} = useSelector((state) => state.products);
     useEffect( () => {
         const getProducts = async () => {
-            const result = await axios.get('https://fakestoreapi.com/products');
-            setProducts(result.data);
+            dispatch(fetchProducts())
         }
         getProducts();
     }, [])
-
     const clickHandler = (product) => {
-        // you need to increase count and send items to cart component
         dispatch(add(product))
     }
   return (
     <div style={{marginTop: '15px'}}>
-        <div className='productsWrapper'>
+      { status === STATUSES.LOADING && <div> <h2>Loading</h2> </div>}  
+      { status === STATUSES.ERROR && <div><h2>Something Went Wrong</h2></div>}
+      { status === STATUSES.SUCCESS  && <div className='productsWrapper'>
                 {
                     products.map( (product) => {
                         return (
@@ -34,7 +31,7 @@ const Home = () => {
                         )
                     })
                 }
-        </div>
+        </div>}
     </div>
   )
 }
