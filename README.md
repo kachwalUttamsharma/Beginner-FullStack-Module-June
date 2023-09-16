@@ -295,4 +295,9 @@ Scaler Full Stack Module Beginner Curriculum
     1. Shopping Cart Example
     2. Redux state& reducer setup (slices & store & provider)
     3. Consuming and update redux state using useSelector and useDispatch
-    
+
+## Class - 37 React - 10
+
+    1. Redux Thunk -> using disptach and createasyncthunk
+    2. completing shopping cart removing all possible states
+        

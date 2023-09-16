@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import {remove} from '../Store/cartSlice'
 
 const Cart = () => {
-
     const items = useSelector((state) => state.cart);
     const dispatch = useDispatch();
     const handleRemove = (itemId) => {
