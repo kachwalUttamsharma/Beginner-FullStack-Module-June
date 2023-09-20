@@ -5,11 +5,16 @@ import NavBar from "./Components/NavBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {Provider} from 'react-redux';
 import Store from './Store/store';
+import { PersistGate } from 'redux-persist/integration/react';
+import { persistStore } from 'redux-persist';
+
+const persistor = persistStore(Store);
 
 function App() {
   return (
     <div className="App">
       <Provider store={Store}>
+      <PersistGate loading={null} persistor={persistor}>
       <BrowserRouter>
         <NavBar />
         <Routes>
@@ -17,6 +22,7 @@ function App() {
           <Route path="/cart" element={<Cart />}></Route>
         </Routes>
       </BrowserRouter>
+      </PersistGate>
       </Provider>
     </div>
   );
