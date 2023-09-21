@@ -300,4 +300,9 @@ Scaler Full Stack Module Beginner Curriculum
 
     1. Redux Thunk -> using disptach and createasyncthunk
     2. completing shopping cart removing all possible states
-        
+
+## Class - 38 React - 11
+
+    1. TO-DO Lisrt using state logic
+    2. Optimizing To-DO List with useReducers
+    3. Understanding application of useTransistion        
