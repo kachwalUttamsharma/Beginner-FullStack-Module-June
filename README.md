@@ -305,4 +305,10 @@ Scaler Full Stack Module Beginner Curriculum
 
     1. TO-DO Lisrt using state logic
     2. Optimizing To-DO List with useReducers
-    3. Understanding application of useTransistion        
+    3. Understanding application of useTransistion  
+
+## Class - 39 React - 12
+
+    1. Code Spliting - Dynamic Imports, React lazy loading
+    2. HOC.
+    3. Controlled vs unControlled.
