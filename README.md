@@ -312,3 +312,8 @@ Scaler Full Stack Module Beginner Curriculum
     1. Code Spliting - Dynamic Imports, React lazy loading
     2. HOC.
     3. Controlled vs unControlled.
+
+## Class - 40 React - 13
+
+    1. Testing
+    2. Deployment on netlify for IMBD Project    
