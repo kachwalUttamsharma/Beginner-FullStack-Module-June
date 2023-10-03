@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 
 // Read, Create, Update, Delete
 
@@ -46,3 +47,24 @@ try {
 // readfilesync, writefilesync, appendfilesync, unlinksync
 
 // creating directories and manipulating them
+
+console.log(__dirname);
+console.log(__filename);
+
+const fileName = path.basename(__filename);
+const ext = path.extname(__filename);
+console.log(fileName);
+console.log("extension name of file ", ext);
+
+// fs.mkdirSync('mydirectory');
+// fs.mkdirSync('mydirectory1');
+// fs.mkdirSync('mydirectory2');
+// fs.rmdirSync('mydirectory1');
+// fs.rmdirSync('mydirectory2');
+
+// if exists
+
+const doFileExist = fs.existsSync('file3.txt');
+console.log(doFileExist);
+
+// Copy a file from one directory to other directory
