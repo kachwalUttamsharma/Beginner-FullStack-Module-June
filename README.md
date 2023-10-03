@@ -317,3 +317,8 @@ Scaler Full Stack Module Beginner Curriculum
 
     1. Testing
     2. Deployment on netlify for IMBD Project    
+
+## Class - 41 Node - 1
+
+    1. Understanding File System, Path Module and working with it
+    2. Understanding Http module and building server

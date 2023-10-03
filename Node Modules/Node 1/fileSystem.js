@@ -68,3 +68,15 @@ const doFileExist = fs.existsSync('file3.txt');
 console.log(doFileExist);
 
 // Copy a file from one directory to other directory
+
+const srcFilePath = '/Users/kachwaluttamsharma/Desktop/Beginnner-FullStack-Module-June/Node Modules/Node 1/mydirectory/file1.txt'
+
+const destinationPath = '/Users/kachwaluttamsharma/Desktop/Beginnner-FullStack-Module-June/Node Modules/Node 1/mydirectory2'
+
+// it is appending file path
+const toBeCopiedPath = path.join(destinationPath, path.basename(srcFilePath));
+console.log(toBeCopiedPath);
+// copyfilesync(src, des)
+
+fs.copyFileSync(srcFilePath, toBeCopiedPath);
+console.log("file data is copied from src to des");
