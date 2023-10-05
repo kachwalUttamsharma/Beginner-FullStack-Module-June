@@ -322,3 +322,9 @@ Scaler Full Stack Module Beginner Curriculum
 
     1. Understanding File System, Path Module and working with it
     2. Understanding Http module and building server
+
+## Class - 42 Node - 2
+
+    1. Introduction to Express.js
+    2. Different Http Method and testing using postman, thunderclient
+    3. Middleware -> Application Level and Router Level Middlewares

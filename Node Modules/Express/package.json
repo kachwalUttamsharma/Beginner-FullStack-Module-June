@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start" : "nodemon index.js"
+    "start" : "nodemon index.js",
+    "startMiddleware": "nodemon middleware.js"
   },
   "dependencies": {
     "express": "^4.18.2",
