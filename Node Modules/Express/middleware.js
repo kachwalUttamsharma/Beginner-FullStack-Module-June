@@ -1,11 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const errorHandler = require('./errorHandler');
 const port = 3001;
 const app = express();
 
 // Built-in middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'))
 
 // router level middleware
 const getUsers = (req, res) => {
@@ -14,36 +16,6 @@ const getUsers = (req, res) => {
 const createUser = (req, res) => {
     console.log("This is the request body received from client : ", req.body);
     res.json({ message: "Create new user" });
-};
-
-// Error Handling MiddleWare
-
-const errorHandler = (err, req, res, next) => {
-    const statusCode = res.statusCode ? res.statusCode : 500;
-    res.status(statusCode);
-    switch (statusCode) {
-      case 401:
-        res.json({
-          title: "Unauthorized",
-          message: err.message || "You dont have access to do such operation",
-        });
-        break;
-      case 404:
-        res.json({
-          title: "Not Found",
-          message: err.message,
-        });
-        break;
-      case 500:
-        res.json({
-          title: "Server Error",
-          message: err.message,
-        });
-        break;
-      default:
-        break;
-    }
-    next()
 };
 
 // Application Level Middleware
@@ -58,16 +30,19 @@ const auth = (req, res, next) => {
     if(req.query.password === '123') {
         next();
     } else {
-        res.sendStatus(401);
+        res.status(401);
+        throw new Error("user is not authorized")
     }
 }
 
 // calling middleware
-
+// app level
 app.use(loggerMiddleware);
 app.use(auth);
-router.route("/").get(getUsers).post(createUser); // /user/
+// router level
 app.use("/user", router)
+router.route("/").get(getUsers).post(createUser); // /user/
+// error handling middleware
 app.use(errorHandler)
 
 app.get('/', (req, res) => {

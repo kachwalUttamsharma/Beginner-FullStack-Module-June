@@ -25,3 +25,7 @@
 
     https://sadanandpai.github.io/frontend-mini-challenges/react/dist/#/challenges
     https://github.com/sadanandpai/frontend-mini-challenges/tree/main
+
+## RestFul API
+
+    https://aws.amazon.com/what-is/restful-api/
