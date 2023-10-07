@@ -1,9 +1,12 @@
 {
   "scripts": {
-    "start" : "nodemon index.js"
+    "start": "nodemon index.js",
+    "testDbConnection": "nodemon databaseConnection.js"
   },
   "dependencies": {
     "express": "^4.18.2",
+    "mongodb": "^6.1.0",
+    "mongoose": "^7.6.0",
     "nodemon": "^3.0.1"
   }
 }

@@ -328,3 +328,10 @@ Scaler Full Stack Module Beginner Curriculum
     1. Introduction to Express.js
     2. Different Http Method and testing using postman, thunderclient
     3. Middleware -> Application Level and Router Level Middlewares
+
+## Class - 43 Node - 3
+
+    1. Recap of Middlewares
+    2. Introuduction to RESTFUL Apis
+    3. Building CRUD APP with All HTTP Verbs
+    4. MongoDb introduction and setting up a connection 
