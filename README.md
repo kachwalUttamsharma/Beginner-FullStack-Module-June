@@ -335,3 +335,9 @@ Scaler Full Stack Module Beginner Curriculum
     2. Introuduction to RESTFUL Apis
     3. Building CRUD APP with All HTTP Verbs
     4. MongoDb introduction and setting up a connection 
+
+## Class - 44 Node - 4
+
+    1. MVC Architecture
+    2. CRUD Through MVC Product APP
+    3. CRUD Through MONGO DB Integration
