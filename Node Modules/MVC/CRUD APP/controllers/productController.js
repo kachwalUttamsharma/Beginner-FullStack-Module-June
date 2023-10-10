@@ -1,6 +1,7 @@
 
 const fs = require('fs')
-const data = JSON.parse(fs.readFileSync('data.json'))
+const path = require('path');
+const data = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../mockData/data.json')))
 const products = data.products
 
 const getAllProducts = (req, res) => {
