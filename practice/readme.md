@@ -29,3 +29,7 @@
 ## RestFul API
 
     https://aws.amazon.com/what-is/restful-api/
+
+## Storing Password using BCrypt
+
+    https://blog.logrocket.com/password-hashing-node-js-bcrypt/

@@ -341,3 +341,10 @@ Scaler Full Stack Module Beginner Curriculum
     1. MVC Architecture
     2. CRUD Through MVC Product APP
     3. CRUD Through MONGO DB Integration
+
+## Class - 45 Node - 5
+
+    1. Setup of Client, Server and Database
+    2. Building Routes for Client and Components (/login, /register, /home)
+    3. Building Rest API for Registering User (/api/user/register)
+    4. Introduction to Bcrypt     
