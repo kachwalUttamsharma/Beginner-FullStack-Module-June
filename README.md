@@ -347,4 +347,10 @@ Scaler Full Stack Module Beginner Curriculum
     1. Setup of Client, Server and Database
     2. Building Routes for Client and Components (/login, /register, /home)
     3. Building Rest API for Registering User (/api/user/register)
-    4. Introduction to Bcrypt     
+    4. Introduction to Bcrypt
+
+## Class - 46 Node - 6
+
+    1. Login Api
+    2. Integration of Register and Login with server
+    3. Introduction to jwt and built sample api (get-current-user)

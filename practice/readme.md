@@ -33,3 +33,9 @@
 ## Storing Password using BCrypt
 
     https://blog.logrocket.com/password-hashing-node-js-bcrypt/
+
+## Authencication and Authorization
+
+    Bearer Key Word - https://medium.com/@arunchaitanya/wtf-is-bearer-token-an-in-depth-explanation-60695b581928#:~:text=Attaching%20%E2%80%9CBearer%E2%80%9D%20before%20the%20token,the%20authentication%20scheme%20being%20used.
+    Authentication using Bcrypt - https://blog.logrocket.com/password-hashing-node-js-bcrypt/
+    Authorization using JWT - https://medium.com/quick-code/handling-authentication-and-authorization-with-node-7f9548fedde8

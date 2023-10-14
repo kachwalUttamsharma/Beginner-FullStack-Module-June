@@ -1,9 +1,20 @@
 import React from "react";
-import { Form } from "antd";
+import { Form, message } from "antd";
 import Button from "../../Components/Button/Button";
 import { Link } from "react-router-dom";
-
+import { RegisterUsers } from "../../ApiCalls/users";
 const Register = () => {
+
+  const onFinish = async (values) => {
+    try {
+      const response = await RegisterUsers(values);
+      if(response.success) {
+        message.success(response.message);
+      }
+    } catch(error) {
+      message.error(error);
+    }
+  }
   return (
     <div className="flex justify-center h-screen items-center bg-main">
       <div className="card p-3 w-400">
@@ -11,7 +22,7 @@ const Register = () => {
           Welcome to Scaler Shows! Please Register
         </h1>
         <hr />
-        <Form layout="vertical" className="mt-1">
+        <Form layout="vertical" className="mt-1" onFinish={onFinish}>
           <Form.Item
             label="Name"
             name="name"
