@@ -54,13 +54,13 @@ function ProtectedRoute({ children }) {
             <i className="ri-shield-user-line text-primary mt-1"></i>
             <h1
               className="text-sm underline"
-              // onClick={() => {
-              //   if (user.isAdmin) {
-              //     navigate("/admin");
-              //   } else {
-              //     navigate("/profile");
-              //   }
-              // }}
+              onClick={() => {
+                if (user.isAdmin) {
+                  navigate("/admin");
+                } else {
+                  navigate("/profile");
+                }
+              }}
             >
               {user.name}
             </h1>

@@ -9,6 +9,8 @@ import "./stylesheets/sizes.css";
 import "./stylesheets/form-elements.css";
 import "./stylesheets/custom.css";
 import "./stylesheets/theme.css";
+import Profile from './Pages/Profile';
+import Admin from './Pages/Admin';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route path="/" element={<ProtectedRoute><Home/></ProtectedRoute>}/>
           <Route path="/login" element={<Login />}/>
           <Route path="/register" element={<Register />} />
+          <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+          <Route path="/admin" element={<ProtectedRoute><Admin /></ProtectedRoute>} />
         </Routes>
       </BrowserRouter>
     </div>
