@@ -354,3 +354,11 @@ Scaler Full Stack Module Beginner Curriculum
     1. Login Api
     2. Integration of Register and Login with server
     3. Introduction to jwt and built sample api (get-current-user)
+
+## Class - 47 Node - 7
+
+    1. Protected Route on Client
+    2. Signout and Completing Edge cases of Signin
+    3. Add Movies API
+    4. Movies List and Movies Form React Component Implementation.
+        
