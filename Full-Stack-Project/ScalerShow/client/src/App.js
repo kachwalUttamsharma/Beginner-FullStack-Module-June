@@ -3,6 +3,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import Home from './Pages/Home/Home';
+import ProtectedRoute from './Components/ProtectedRoute'
 import "./stylesheets/alignments.css";
 import "./stylesheets/sizes.css";
 import "./stylesheets/form-elements.css";
@@ -14,7 +15,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />}/>
+          <Route path="/" element={<ProtectedRoute><Home/></ProtectedRoute>}/>
           <Route path="/login" element={<Login />}/>
           <Route path="/register" element={<Register />} />
         </Routes>
