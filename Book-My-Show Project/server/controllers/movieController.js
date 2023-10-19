@@ -16,6 +16,54 @@ const AddMovie = async (req, res) => {
     }
 }
 
+const getAllMovies = async (req, res) => {
+    try {
+        const movies = await Movie.find();
+        res.send({
+            success: true,
+            message: "Movies Fetched Successfully",
+            data: movies
+        })
+    } catch(error) {
+        res.send({
+            success: false,
+            message: error.message
+        })
+    }
+}
+
+const deleteMovies = async(req,res) => {
+    try {
+        await Movie.findByIdAndDelete(req.body.movieId);
+        res.send({
+            success: true,
+            message: "Movie Deleted Successfully"
+        })
+    } catch (err) {
+        res.send({
+            success:false,
+            message: err.message
+        })
+    }
+}
+
+const updateMovie = async (req, res) => {
+    try {
+        await Movie.findByIdAndUpdate(req.body.movieId, req.body);
+        res.send({
+            success: true,
+            message: "Movie Deleted Successfully"
+        })
+    } catch (err) {
+        res.send({
+            success:false,
+            message: err.message
+        })
+    }
+}
 module.exports = {
-    AddMovie
+    AddMovie,
+    getAllMovies,
+    deleteMovies,
+    updateMovie
 }
