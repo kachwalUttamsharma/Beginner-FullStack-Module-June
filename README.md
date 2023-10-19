@@ -362,3 +362,7 @@ Scaler Full Stack Module Beginner Curriculum
     3. Add Movies API
     4. Movies List and Movies Form React Component Implementation.
         
+## Class - 48 Node 8
+
+    1. Movies API's Implementation and Integration (CRUD)
+    2. Theatre API's Implementation (getByOwner and addTheatre)
