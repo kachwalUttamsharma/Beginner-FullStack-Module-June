@@ -2,6 +2,7 @@ import React from 'react'
 import { Tabs } from "antd";
 import PageTitle from '../../Components/PageTitle';
 import MoviesList from './MoviesList';
+import TheatresList from './TheatreList';
 
 const Admin = () => {
   return (
@@ -12,7 +13,7 @@ const Admin = () => {
           <Tabs.TabPane key="1" tab="Movies">
             <MoviesList />
           </Tabs.TabPane>
-          <Tabs.TabPane key="2" tab="Theatres">{"Theatre"}</Tabs.TabPane>
+          <Tabs.TabPane key="2" tab="Theatres"> <TheatresList /></Tabs.TabPane>
       </Tabs>
     </div>
   )
