@@ -3,6 +3,7 @@ import { Tabs } from "antd";
 import PageTitle from '../../Components/PageTitle';
 import MoviesList from './MoviesList';
 import TheatresList from './TheatreList';
+import UpcomingList from './UpcomingList';
 
 const Admin = () => {
   return (
@@ -14,6 +15,9 @@ const Admin = () => {
             <MoviesList />
           </Tabs.TabPane>
           <Tabs.TabPane key="2" tab="Theatres"> <TheatresList /></Tabs.TabPane>
+          <Tabs.TabPane tab="Upcoming Movies" key="3">
+            <UpcomingList/>
+        </Tabs.TabPane>
       </Tabs>
     </div>
   )
