@@ -97,7 +97,8 @@ const addShowToTheatre = async (req, res) => {
 
 const getAllShowsByTheatre = async (req, res) => {
   try {
-    const shows = await show.find({ theatre: req.body.theatreId })
+    const shows = await show
+      .find({ theatre: req.body.theatreId })
       .populate("movie")
       .sort({
         createdAt: -1,
@@ -115,6 +116,55 @@ const getAllShowsByTheatre = async (req, res) => {
   }
 };
 
+const deleteShow = async (req, res) => {
+  try {
+    await show.findByIdAndDelete(req.body.showId);
+    res.send({
+      success: true,
+      message: "Show deleted successfully",
+    });
+  } catch (error) {
+    res.send({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+const getAllTheatersByMovie = async (req, res) => {
+  try {
+    const { movie, date } = req.body;
+    // find all shows of a movie
+    const shows = await show.find({ movie, date })
+      .populate("theatre")
+      .sort({ createdAt: -1 });
+    let uniqueTheatres = [];
+    shows.forEach((show) => {
+      const theatre = uniqueTheatres.find(
+        (theatre) => theatre._id == show.theatre._id
+      );
+      if (!theatre) {
+        const showsForThisTheatre = shows.filter(
+          (showObj) => showObj.theatre._id == show.theatre._id
+        );
+        uniqueTheatres.push({
+          ...show.theatre._doc,
+          shows: showsForThisTheatre,
+        });
+      }
+    });
+    res.send({
+      success: true,
+      message: "Theatres fetched successfully",
+      data: uniqueTheatres,
+    });
+  } catch (error) {
+    res.send({
+      success: false,
+      message: error.message,
+    });
+  }
+};
 module.exports = {
   addTheatre,
   getAllTheatresByOwnerId,
@@ -123,4 +173,6 @@ module.exports = {
   getAllTheatres,
   addShowToTheatre,
   getAllShowsByTheatre,
+  deleteShow,
+  getAllTheatersByMovie
 };

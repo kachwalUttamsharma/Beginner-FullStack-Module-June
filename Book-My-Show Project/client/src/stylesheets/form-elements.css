@@ -2,7 +2,7 @@ input , textarea , select{
     height: 40px;
     padding-left: 15px;
     border: 1px solid #8a8a8a;
-    width: 100%;
+    width: 90%;
 }
 
 input:focus , textarea:focus , select:focus{

@@ -4,7 +4,7 @@ import Button from '../../../Components/Button/Button'
 import { useDispatch } from "react-redux";
 import { HideLoading, ShowLoading } from "../../../redux/loadersSlice";
 import moment from "moment";
-import { GetAllShowsByTheatre, AddShow } from "../../../ApiCalls/threatres";
+import { GetAllShowsByTheatre, AddShow, DeleteShow } from "../../../ApiCalls/threatres";
 import { GetAllMovies } from "../../../ApiCalls/movies";
 
 function Shows({ openShowsModal, setOpenShowsModal, theatre }) {
@@ -51,6 +51,23 @@ function Shows({ openShowsModal, setOpenShowsModal, theatre }) {
         message.success(response.message);
         getData();
         setView("table");
+      } else {
+        message.error(response.message);
+      }
+      dispatch(HideLoading());
+    } catch (error) {
+      message.error(error.message);
+      dispatch(HideLoading());
+    }
+  };
+
+  const handleDelete = async (id) => {
+    try {
+      dispatch(ShowLoading());
+      const response = await DeleteShow({ showId: id });
+      if (response.success) {
+        message.success(response.message);
+        getData();
       } else {
         message.error(response.message);
       }
@@ -108,9 +125,9 @@ function Shows({ openShowsModal, setOpenShowsModal, theatre }) {
             {record.bookedSeats.length === 0 && (
               <i
                 className="ri-delete-bin-line"
-                // onClick={() => {
-                //   handleDelete(record._id);
-                // }}
+                onClick={() => {
+                  handleDelete(record._id);
+                }}
               ></i>
             )}
           </div>

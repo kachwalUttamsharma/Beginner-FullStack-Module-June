@@ -11,6 +11,7 @@ import "./stylesheets/custom.css";
 import "./stylesheets/theme.css";
 import Profile from './Pages/Profile';
 import Admin from './Pages/Admin';
+import TheatresForMovie from './Pages/TheatresForMovie';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
           <Route path="/admin" element={<ProtectedRoute><Admin /></ProtectedRoute>} />
+          <Route path="/movie/:id" element={<ProtectedRoute><TheatresForMovie /></ProtectedRoute>}/>
         </Routes>
       </BrowserRouter>
     </div>

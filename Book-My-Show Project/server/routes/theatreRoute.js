@@ -7,6 +7,8 @@ const {
   getAllTheatres,
   addShowToTheatre,
   getAllShowsByTheatre,
+  deleteShow,
+  getAllTheatersByMovie
 } = require("../controllers/theatreController");
 const { validatingAuthToken } = require("../middleware/authMiddleware");
 
@@ -25,5 +27,7 @@ router.post(
   validatingAuthToken,
   getAllShowsByTheatre
 );
+router.post('/delete-show', validatingAuthToken, deleteShow);
+router.post('/get-all-theatres-by-movie', validatingAuthToken, getAllTheatersByMovie);
 
 module.exports = router;
