@@ -134,16 +134,22 @@ const deleteShow = async (req, res) => {
 const getAllTheatersByMovie = async (req, res) => {
   try {
     const { movie, date } = req.body;
-    // find all shows of a movie
+    // find all shows which matches movie and date
     const shows = await show.find({ movie, date })
       .populate("theatre")
       .sort({ createdAt: -1 });
     let uniqueTheatres = [];
+    // iterate over all shows 
     shows.forEach((show) => {
+      // for each show check if show.theatre._id is present in unique Theatre
       const theatre = uniqueTheatres.find(
         (theatre) => theatre._id == show.theatre._id
       );
+      // only if theatre is undefined, which means theatre under show is unique
+      // will enter if condition
       if (!theatre) {
+        // iterate over all shows again and check show which matches current 
+        // show theatre id, such that you can club all shows under unique theatre id
         const showsForThisTheatre = shows.filter(
           (showObj) => showObj.theatre._id == show.theatre._id
         );

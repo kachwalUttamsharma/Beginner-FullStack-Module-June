@@ -31,7 +31,7 @@ app.put('/products/updateInfo/:id', (req, res) => {
     const productIndex = products.findIndex((p) => p.id === id);
     // splice -> it is used add and remove item from array at any respective index
     // it is used replace or update item at specified index
-    products.splice(productIndex, 1, {id: id, ...req.body})
+    products.splice(productIndex, 1, { ...req.body, id: id})
     res.status(201).json();
 })
 
