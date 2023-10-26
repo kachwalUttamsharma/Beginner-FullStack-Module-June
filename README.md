@@ -371,3 +371,9 @@ Scaler Full Stack Module Beginner Curriculum
 
     1. Theatre API implementation and integration with client for admin and profile users
     2. Building Show API and Integration with Client to add shows.
+
+## Class - 50 Node 10 
+
+    1. Home Page UI
+    2. Building API for getMovies By Id
+    3. Building API for getAllTheatre by movie id
