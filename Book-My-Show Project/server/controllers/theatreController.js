@@ -171,6 +171,25 @@ const getAllTheatersByMovie = async (req, res) => {
     });
   }
 };
+
+
+const getShowById = async (req, res) => {
+  try {
+    const showData = await show.findById(req.body.showId)
+      .populate("movie")
+      .populate("theatre");
+    res.send({
+      success: true,
+      message: "Show fetched successfully",
+      data: showData,
+    });
+  } catch (error) {
+    res.send({
+      success: false,
+      message: error.message,
+    });
+  }
+}
 module.exports = {
   addTheatre,
   getAllTheatresByOwnerId,
@@ -180,5 +199,6 @@ module.exports = {
   addShowToTheatre,
   getAllShowsByTheatre,
   deleteShow,
-  getAllTheatersByMovie
+  getAllTheatersByMovie,
+  getShowById
 };

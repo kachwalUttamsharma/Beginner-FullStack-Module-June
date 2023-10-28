@@ -8,7 +8,8 @@ const {
   addShowToTheatre,
   getAllShowsByTheatre,
   deleteShow,
-  getAllTheatersByMovie
+  getAllTheatersByMovie,
+  getShowById
 } = require("../controllers/theatreController");
 const { validatingAuthToken } = require("../middleware/authMiddleware");
 
@@ -29,5 +30,6 @@ router.post(
 );
 router.post('/delete-show', validatingAuthToken, deleteShow);
 router.post('/get-all-theatres-by-movie', validatingAuthToken, getAllTheatersByMovie);
+router.post('/get-show-by-id', validatingAuthToken, getShowById)
 
 module.exports = router;
